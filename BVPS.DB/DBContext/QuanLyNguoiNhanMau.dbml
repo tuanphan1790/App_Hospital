@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="QuanLyNguoiNhanMauDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_quanlymau" Member="dtb_quanlymaus">
+    <Type Name="dtb_quanlymau">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ma_nguoi_hien" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ngay_luu_tru" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ngay_su_dung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ma_nguoi_nhan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ket_qua_su_dung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="huy_mau" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ngay_huy_mau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="is_approve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

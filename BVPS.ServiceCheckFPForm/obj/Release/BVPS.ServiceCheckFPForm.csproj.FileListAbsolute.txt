@@ -1,0 +1,8 @@
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\bin\Release\BVPS.ServiceCheckFPForm.exe.config
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\bin\Release\BVPS.ServiceCheckFPForm.exe
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\bin\Release\BVPS.ServiceCheckFPForm.pdb
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\obj\Release\BVPS.ServiceCheckFPForm.csprojResolveAssemblyReference.cache
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\obj\Release\BVPS.ServiceCheckFPForm.Properties.Resources.resources
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\obj\Release\BVPS.ServiceCheckFPForm.csproj.GenerateResource.Cache
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\obj\Release\BVPS.ServiceCheckFPForm.exe
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.ServiceCheckFPForm\obj\Release\BVPS.ServiceCheckFPForm.pdb

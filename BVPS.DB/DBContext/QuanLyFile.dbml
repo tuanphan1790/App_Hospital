@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="QuanLyFileDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_patient_documents" Member="dtb_patient_documents">
+    <Type Name="dtb_patient_document">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="doc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_doc_types" Member="dtb_doc_types">
+    <Type Name="dtb_doc_type">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="doc_name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="doc_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="ThongTinNguoiDungDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_function" Member="dtb_functions">
+    <Type Name="dtb_function">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="use_for_web" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_division" Member="dtb_divisions">
+    <Type Name="dtb_division">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_permission" Member="dtb_permissions">
+    <Type Name="dtb_permission">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="function_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="permission" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_member" Member="dtb_members">
+    <Type Name="dtb_member">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="auth_key" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="password_hash" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="password_reset_token" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="avatar" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="division_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_at" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="use_for_web" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,9 @@
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\obj\Release\BVPS.DB.csprojResolveAssemblyReference.cache
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\BVPS.DB.dll.config
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\BVPS.DB.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\BVPS.DB.pdb
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\BVPS.Model.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\libzkfpcsharp.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\bin\Release\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\obj\Release\BVPS.DB.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.DB\obj\Release\BVPS.DB.pdb

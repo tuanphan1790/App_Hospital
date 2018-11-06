@@ -1,0 +1,9 @@
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.Model\bin\Debug\BVPS.Model.dll
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.Model\bin\Debug\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.Model\obj\Debug\BVPS.Model.dll
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.Model\obj\Debug\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\FORM_BVPS\LIS\BVPS.Model\obj\Debug\BVPS.Model.csprojResolveAssemblyReference.cache
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Debug\BVPS.Model.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Debug\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Debug\BVPS.Model.dll
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Debug\BVPS.Model.pdb

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="InformationTableDB">
+  <DataContextMoniker Name="/InformationTableDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6a867cc0-6dd4-4c0f-9c35-2003bbda6b3b" absoluteBounds="0.75, 2.75, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/InformationTableDBDataContext/FingerPrint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c15ce986-4290-4832-a53c-4324fd0f90bf" absoluteBounds="0.765, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e1f57c9-399b-4f87-96f1-111b36affa1d" absoluteBounds="3.5, 1.125, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/InformationTableDBDataContext/ThongTinCaNhan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e115e2e4-cc51-4e5e-8e00-93f919d55f3e" absoluteBounds="3.515, 1.585, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.73159912109375); (3.5 : 3.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InformationTableDBDataContext/FingerPrint/FingerPrint_ThongTinCaNhan" />
+      <nodes>
+        <classShapeMoniker Id="6a867cc0-6dd4-4c0f-9c35-2003bbda6b3b" />
+        <classShapeMoniker Id="0e1f57c9-399b-4f87-96f1-111b36affa1d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e0309ce4-0946-4e4d-b153-af7505629108" absoluteBounds="7.875, 2.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/InformationTableDBDataContext/TTCNServer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3505f5c8-8dc0-4f1d-b279-83261b251b6b" absoluteBounds="7.89, 3.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

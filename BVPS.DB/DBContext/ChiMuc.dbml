@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="ChiMucDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_class" Member="dtb_classes">
+    <Type Name="dtb_class">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_url_web_service" Member="dtb_url_web_services">
+    <Type Name="dtb_url_web_service">
+      <Column Name="url" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_profile" Member="dtb_profiles">
+    <Type Name="dtb_profile">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="website" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_level" Member="dtb_levels">
+    <Type Name="dtb_level">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_nation" Member="dtb_nations">
+    <Type Name="dtb_nation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_province" Member="dtb_provinces">
+    <Type Name="dtb_province">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="province_code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="province_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_district" Member="dtb_districts">
+    <Type Name="dtb_district">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="district_code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="district_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="province_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

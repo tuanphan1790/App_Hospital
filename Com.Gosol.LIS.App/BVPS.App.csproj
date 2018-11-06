@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1B6FAEB-A600-44D0-885A-13745616C12F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Gosol.LIS.App</RootNamespace>
+    <AssemblyName>Com.Gosol.LIS.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Graphicloads-Medical-Health-Hospital-sign.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Office.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Pdf.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.RichEdit.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Sparkline.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Utils.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraBars.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraEditors.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraGrid.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraLayout.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraNavBar.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraPrinting.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraTreeList.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="libzkfpcsharp">
+      <HintPath>..\ZKFinger SDK-v5.3.0.21-Lite\Windows\C#\lib\x64\libzkfpcsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4, Version=1.0.15.93, Culture=neutral, PublicKeyToken=62e1b5ec1eec9bdd, processorArchitecture=MSIL">
+      <HintPath>..\packages\lz4net.1.0.15.93\lib\net4-client\LZ4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.3.14.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.3.14\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Words.NET, Version=1.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.2.1\lib\Xceed.Words.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitmapFormat.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataJson\BenhNhanInfo.cs" />
+    <Compile Include="DataJson\ListBenhNhans.cs" />
+    <Compile Include="FORM\AppsLIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\AppsLIST.Designer.cs">
+      <DependentUpon>AppsLIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\BeginForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\BeginForm.Designer.cs">
+      <DependentUpon>BeginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMDanToc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMDanToc.Designer.cs">
+      <DependentUpon>CMDanToc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMThanhPho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMThanhPho.Designer.cs">
+      <DependentUpon>CMThanhPho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMTinhThanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMTinhThanh.Designer.cs">
+      <DependentUpon>CMTinhThanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMTrinhDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\ChiMuc\CMTrinhDo.Designer.cs">
+      <DependentUpon>CMTrinhDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\ConnectDBTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\ConnectDBTT.Designer.cs">
+      <DependentUpon>ConnectDBTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\DanhSachBenhNhans.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\DanhSachBenhNhans.Designer.cs">
+      <DependentUpon>DanhSachBenhNhans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\HoSoNguoiHienNoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\HoSoNguoiHienNoan.Designer.cs">
+      <DependentUpon>HoSoNguoiHienNoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\HoSoNguoiHienTinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\HoSoNguoiHienTinh.Designer.cs">
+      <DependentUpon>HoSoNguoiHienTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\LogHisSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\LogHisSystem.Designer.cs">
+      <DependentUpon>LogHisSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\QuanLyBenhNhanNhanMau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\QuanLyBenhNhanNhanMau.Designer.cs">
+      <DependentUpon>QuanLyBenhNhanNhanMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\QuanLyDanhMuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\QuanLyDanhMuc.Designer.cs">
+      <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\TrungTamHTSSDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\TrungTamHTSSDlg.Designer.cs">
+      <DependentUpon>TrungTamHTSSDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM\UserPermission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FORM\UserPermission.Designer.cs">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FORM\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ClientApp.cs" />
+    <Compile Include="Service\Header.cs" />
+    <Compile Include="Service\MessageCodes.cs" />
+    <Compile Include="Service\Message\Message.cs" />
+    <Compile Include="Service\Message\PingMessage.cs" />
+    <Compile Include="Service\Message\RequestDanhMucMessage.cs" />
+    <Compile Include="Service\Message\RequestFPMessage.cs" />
+    <Compile Include="Service\Message\ReturnFPMessage.cs" />
+    <Compile Include="Service\Message\UpdateDanhMucMessage.cs" />
+    <Compile Include="Service\SerializerClient.cs" />
+    <Compile Include="UserControlBN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="FORM\AppsLIST.resx">
+      <DependentUpon>AppsLIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\BeginForm.resx">
+      <DependentUpon>BeginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\ChiMuc\CMDanToc.resx">
+      <DependentUpon>CMDanToc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\ChiMuc\CMThanhPho.resx">
+      <DependentUpon>CMThanhPho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\ChiMuc\CMTinhThanh.resx">
+      <DependentUpon>CMTinhThanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\ChiMuc\CMTrinhDo.resx">
+      <DependentUpon>CMTrinhDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\ConnectDBTT.resx">
+      <DependentUpon>ConnectDBTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\DanhSachBenhNhans.resx">
+      <DependentUpon>DanhSachBenhNhans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\HoSoNguoiHienNoan.resx">
+      <DependentUpon>HoSoNguoiHienNoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\HoSoNguoiHienTinh.resx">
+      <DependentUpon>HoSoNguoiHienTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\LogHisSystem.resx">
+      <DependentUpon>LogHisSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\QuanLyBenhNhanNhanMau.resx">
+      <DependentUpon>QuanLyBenhNhanNhanMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\QuanLyDanhMuc.resx">
+      <DependentUpon>QuanLyDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\TrungTamHTSSDlg.resx">
+      <DependentUpon>TrungTamHTSSDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM\UserPermission.resx">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FORM\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlBN.resx">
+      <DependentUpon>UserControlBN.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.ConvertFilePattern.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.Format.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.Season.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.SerialDataEventArgs.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.SerialPortManager.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.SerialSettings.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.SQLHelper.datasource" />
+    <None Include="Properties\DataSources\Com.Gosol.LIS.Utility.Utils.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bo-y-te-l_6354248014217431831.jpg" />
+    <None Include="Resources\logo_BYT2010052010101820100520150216.jpg" />
+    <None Include="Resources\Bo-y-te-l_635424801421743183.jpg" />
+    <None Include="Resources\LOGOBK.ico" />
+    <None Include="Resources\logo.ico" />
+    <None Include="Resources\Minus-32.png" />
+    <None Include="Resources\Restart-32.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\plus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BVPS.DB\BVPS.DB.csproj">
+      <Project>{06bb9e00-e7a3-456d-a11a-fe9f473004e0}</Project>
+      <Name>BVPS.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BVPS.Model\BVPS.Model.csproj">
+      <Project>{cb77adf5-c1e7-4985-bada-7ff6be9c9dfc}</Project>
+      <Name>BVPS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\540226914-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3adaa00f0d9454e6393e63563d473912.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Graphicloads-Medical-Health-Hospital-sign.ico" />
+    <None Include="Resources\ff5a00.png" />
+    <None Include="Resources\27-hinh-nen-powerpoint-chuyen-nghiep-ve-y-te-y-hoc-suc-khoe-bac-si-1489911180-17.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

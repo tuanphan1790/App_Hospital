@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="InformationUser" Class="InformationTableDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=InformationUser;Integrated Security=True" SettingsObjectName="DBLib.Properties.Settings" SettingsPropertyName="InformationUserConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FingerPrint" Member="FingerPrints">
+    <Type Name="FingerPrint">
+      <Column Name="keyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strFPNgonCaiPhai" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strFPNgonTroPhai" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strFPNgonCaiTrai" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strFPNgonTroTrai" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="FingerPrint_ThongTinCaNhan" Member="ThongTinCaNhans" ThisKey="keyId" OtherKey="keyPrintfFinger" Type="ThongTinCaNhan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThongTinCaNhan" Member="ThongTinCaNhans">
+    <Type Name="ThongTinCaNhan">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strHoVaTen" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strCmnd" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strNoiNhanMau" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strKyHieu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numNamSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strTrinhDo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="strDienThoai1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="strDienThoai2" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strNgheNghiep" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="numTTHonNhan" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="numSoConTrai" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="numSoConGai" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="boolConCai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numBanTinh" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="boolCoThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="strTinhCach" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strNangKhieu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strUocMuon" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strTaiSaoHienTinh" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strLoiNhanNguoiNhan" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="keyPrintfFinger" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="FingerPrint_ThongTinCaNhan" Member="FingerPrint" ThisKey="keyPrintfFinger" OtherKey="keyId" Type="FingerPrint" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTCNServer" Member="TTCNServers">
+    <Type Name="TTCNServer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strTenTT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strHoVaTen" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strCmnd" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numNamSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numTrinhDo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="strNgheNghiep" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strNoiNhanMau" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="numTTHonNhan" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="boolConCai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numSoConTrai" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="numSoConGai" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="strFPNgonCaiPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strFPNgonTroPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strFPNgonCaiTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="strFPNgonTroTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="InformationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.ServiceCheckFPForm.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_sperm_send" Member="dtb_sperm_sends">
+    <Type Name="dtb_sperm_send">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dateofbirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="identifier" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dateofid" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AddressOfId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Adddress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="level_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="job" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nation_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="class_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="province_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="district_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="maried" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="haschild" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numofchild" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="yearofchildlast" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dayofhavebaby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="heathstatus" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="historyofpatient" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FPNgonCaiPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonCaiTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonTroPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonTroTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="historyoffamily" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FPBase64NgonCaiPhai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonCaiTrai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonTroPhai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonTroTrai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FlagNeedSync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaTrungTam" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_patien_ovule_send" Member="dtb_patien_ovule_sends">
+    <Type Name="dtb_patien_ovule_send">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Patien_code" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Identify" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DateOfId" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AddressOfId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Province_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="District_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FPNgonCaiPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonCaiTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonTroPhai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FPNgonTroTrai" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Nation_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FPBase64NgonCaiPhai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonCaiTrai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonTroPhai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FPBase64NgonTroTrai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FlagNeedSync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="class_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTrungTam" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_class" Member="dtb_classes">
+    <Type Name="dtb_class">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_district" Member="dtb_districts">
+    <Type Name="dtb_district">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="district_code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="district_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_level" Member="dtb_levels">
+    <Type Name="dtb_level">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_province" Member="dtb_provinces">
+    <Type Name="dtb_province">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="province_code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="province_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06BB9E00-E7A3-456D-A11A-FE9F473004E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BVPS.DB</RootNamespace>
+    <AssemblyName>BVPS.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="libzkfpcsharp">
+      <HintPath>..\ZKFinger SDK-v5.3.0.21-Lite\Windows\C#\lib\x64\libzkfpcsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBenhNhan.cs" />
+    <Compile Include="BenhNhanHienNoanDB.cs" />
+    <Compile Include="BenhNhanHienTinhDB.cs" />
+    <Compile Include="ChiMucDB.cs" />
+    <Compile Include="DBContext\ChiMuc.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChiMuc.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\LogHisSystem.cs">
+      <DependentUpon>LogHisSystem.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\LogHisSystem.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogHisSystem.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\QuanLyFile.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyFile.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\QuanLyNguoiNhanMau.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNguoiNhanMau.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinBenhNhanHienNoan.cs">
+      <DependentUpon>ThongTinBenhNhanHienNoan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinBenhNhanHienTinh.cs">
+      <DependentUpon>ThongTinBenhNhanHienTinh.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinNguoiDung.cs">
+      <DependentUpon>ThongTinNguoiDung.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HisLogSystemDB.cs" />
+    <Compile Include="QuanLyNguoiNhanDB.cs" />
+    <Compile Include="UserInforDB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinBenhNhanHienNoan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongTinBenhNhanHienNoan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinBenhNhanHienTinh.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongTinBenhNhanHienTinh.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\ThongTinNguoiDung.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongTinNguoiDung.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DBContext\ChiMuc.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ChiMuc.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBContext\LogHisSystem.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LogHisSystem.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBContext\QuanLyFile.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QuanLyFile.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBContext\QuanLyNguoiNhanMau.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QuanLyNguoiNhanMau.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DBContext\ThongTinBenhNhanHienNoan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThongTinBenhNhanHienNoan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBContext\ThongTinBenhNhanHienTinh.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThongTinBenhNhanHienTinh.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBContext\ThongTinNguoiDung.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ThongTinNguoiDung.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\ThongTinBenhNhanHienTinh.dbml.layout">
+      <DependentUpon>ThongTinBenhNhanHienTinh.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\ThongTinBenhNhanHienNoan.dbml.layout">
+      <DependentUpon>ThongTinBenhNhanHienNoan.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\ThongTinNguoiDung.dbml.layout">
+      <DependentUpon>ThongTinNguoiDung.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BVPS.Model\BVPS.Model.csproj">
+      <Project>{cb77adf5-c1e7-4985-bada-7ff6be9c9dfc}</Project>
+      <Name>BVPS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\LogHisSystem.dbml.layout">
+      <DependentUpon>LogHisSystem.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\ChiMuc.dbml.layout">
+      <DependentUpon>ChiMuc.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\QuanLyFile.dbml.layout">
+      <DependentUpon>QuanLyFile.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBContext\QuanLyNguoiNhanMau.dbml.layout">
+      <DependentUpon>QuanLyNguoiNhanMau.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

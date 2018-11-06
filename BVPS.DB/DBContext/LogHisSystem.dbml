@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="LogHisSystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dtb_log" Member="dtb_logs">
+    <Type Name="dtb_log">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="controller" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="desktop_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
