@@ -140,7 +140,7 @@
       <HintPath>C:\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraTreeList.v17.1.dll</HintPath>
     </Reference>
     <Reference Include="libzkfpcsharp">
-      <HintPath>..\ZKFinger SDK-v5.3.0.21-Lite\Windows\C#\lib\x64\libzkfpcsharp.dll</HintPath>
+      <HintPath>..\ZKFinger SDK-v5.3.0.21-Lite\Windows\C#\lib\x86\libzkfpcsharp.dll</HintPath>
     </Reference>
     <Reference Include="LZ4, Version=1.0.15.93, Culture=neutral, PublicKeyToken=62e1b5ec1eec9bdd, processorArchitecture=MSIL">
       <HintPath>..\packages\lz4net.1.0.15.93\lib\net4-client\LZ4.dll</HintPath>
