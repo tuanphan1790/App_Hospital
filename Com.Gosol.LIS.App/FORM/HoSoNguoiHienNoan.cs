@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BVPS.App;
 using BVPS.Model;
-using System.Runtime.InteropServices;
 using BVPS.DB;
 using libzkfpcsharp;
-using System.IO;
 using System.Drawing.Imaging;
 using System.Threading;
 using DevComponents.DotNetBar.SuperGrid;
@@ -2217,6 +2210,24 @@ namespace Com.Gosol.LIS.App.FORM
         }
 
         private void HN_cboQuanHuyen_MouseClick(object sender, MouseEventArgs e)
+        {
+            var value = HN_cboTinhThanh.SelectedValue;
+            if (value == null)
+                return;
+
+            HN_cboQuanHuyen.DataSource = app.GetDMThanhPho(value.ToString());
+        }
+
+        private void HN_cboQuanHuyen_MouseUp(object sender, MouseEventArgs e)
+        {
+            var value = HN_cboTinhThanh.SelectedValue;
+            if (value == null)
+                return;
+
+            HN_cboQuanHuyen.DataSource = app.GetDMThanhPho(value.ToString());
+        }
+
+        private void HN_cboQuanHuyen_MouseDown(object sender, MouseEventArgs e)
         {
             var value = HN_cboTinhThanh.SelectedValue;
             if (value == null)

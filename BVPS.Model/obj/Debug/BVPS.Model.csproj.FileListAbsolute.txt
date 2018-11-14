@@ -7,3 +7,4 @@ D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Debug\BVPS.Model.dll
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Debug\BVPS.Model.pdb
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Debug\BVPS.Model.dll
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Debug\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Debug\BVPS.Model.csprojResolveAssemblyReference.cache

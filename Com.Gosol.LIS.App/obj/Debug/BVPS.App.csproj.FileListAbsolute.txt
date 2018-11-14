@@ -129,3 +129,5 @@ D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\bin\Debug\ja\DevExpress.O
 D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
 D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\obj\Debug\Com.Gosol.LIS.App.exe
 D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\obj\Debug\Com.Gosol.LIS.App.pdb
+D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\bin\Debug\NLog.dll
+D:\Work\C#\Project_MaternityHospital\Com.Gosol.LIS.App\bin\Debug\NLog.xml

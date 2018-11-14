@@ -365,6 +365,7 @@ namespace Com.Gosol.LIS.App.FORM
         {
             IdLuuTruMau = 0;
             HT_txtMatDoLTM.Clear();
+            HT_txtConfirmViTriLTM.Clear();
             HT_txtDiDongLTM.Clear();
             HT_txtHinhDangLTM.Clear();
             HT_txtViTriLTM.Clear();
@@ -377,9 +378,15 @@ namespace Com.Gosol.LIS.App.FORM
 
         private void HT_btnLuuLuuTruMau_Click(object sender, EventArgs e)
         {
-            if (HT_txtViTriLTM.Text == "")
+            if (HT_txtViTriLTM.Text == "" | HT_txtConfirmViTriLTM.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập một số trường thông tin bắt buộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(HT_txtViTriLTM.Text != HT_txtConfirmViTriLTM.Text)
+            {
+                MessageBox.Show("Vị trí lưu trữ mẫu ở hai lần nhập không đồng nhất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1237,6 +1244,7 @@ namespace Com.Gosol.LIS.App.FORM
                     HT_txtDiDongLTM.Text = ltm.DiDong;
                     HT_txtHinhDangLTM.Text = ltm.HinhDang;
                     HT_txtViTriLTM.Text = ltm.ViTri;
+                    HT_txtConfirmViTriLTM.Text = ltm.ViTri;
                     HT_chkDuDieuKienLuuTru.Checked = ltm.DuDieuKienLuuTru;
                     HT_txtLyDoLuu.Text = ltm.LyDoLuu;
                     HT_chkBenhDiTruyen.Checked = ltm.BenhDiTruyen;
@@ -2130,6 +2138,24 @@ namespace Com.Gosol.LIS.App.FORM
                 return;
 
             HT_cboQuanHuyenNVD.DataSource = app.GetDMThanhPho(value.ToString());
+        }
+
+        private void HT_cboQuanHuyen_MouseUp(object sender, MouseEventArgs e)
+        {
+            var value = HT_cboTinhThanhNVD.SelectedValue;
+            if (value == null)
+                return;
+
+            HT_cboQuanHuyen.DataSource = app.GetDMThanhPho(value.ToString());
+        }
+
+        private void HT_cboQuanHuyen_MouseDown(object sender, MouseEventArgs e)
+        {
+            var value = HT_cboTinhThanhNVD.SelectedValue;
+            if (value == null)
+                return;
+
+            HT_cboQuanHuyen.DataSource = app.GetDMThanhPho(value.ToString());
         }
     }
 }

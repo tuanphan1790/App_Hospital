@@ -23,6 +23,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SyncTTHTSS", "SyncTTHTSS\Sy
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SyncTTCNTT", "SyncTTCNTT\SyncTTCNTT.vdproj", "{9E4E724D-C0EB-4D6A-BEEE-8BF055CD5EF5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupAppHTSS", "SetupAppHTSS\SetupAppHTSS.vdproj", "{4509DF6B-0C1E-4657-9EAA-189497DF08E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -207,6 +209,16 @@ Global
 		{9E4E724D-C0EB-4D6A-BEEE-8BF055CD5EF5}.Release|x64.ActiveCfg = Release
 		{9E4E724D-C0EB-4D6A-BEEE-8BF055CD5EF5}.SingleImage|Any CPU.ActiveCfg = Release
 		{9E4E724D-C0EB-4D6A-BEEE-8BF055CD5EF5}.SingleImage|x64.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.CD_ROM|Any CPU.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.CD_ROM|x64.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.Debug|Any CPU.ActiveCfg = Debug
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.Debug|x64.ActiveCfg = Debug
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.DVD-5|Any CPU.ActiveCfg = Debug
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.DVD-5|x64.ActiveCfg = Debug
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.Release|Any CPU.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.Release|x64.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.SingleImage|Any CPU.ActiveCfg = Release
+		{4509DF6B-0C1E-4657-9EAA-189497DF08E3}.SingleImage|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
