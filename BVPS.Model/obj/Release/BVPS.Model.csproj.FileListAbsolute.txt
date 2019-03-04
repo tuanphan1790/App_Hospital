@@ -2,3 +2,4 @@ D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Release\BVPS.Model.dll
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\bin\Release\BVPS.Model.pdb
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Release\BVPS.Model.dll
 D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Release\BVPS.Model.pdb
+D:\Work\C#\Project_MaternityHospital\BVPS.Model\obj\Release\BVPS.Model.csprojResolveAssemblyReference.cache
