@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtMailServerAddress = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSMTPServerPort = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -48,9 +46,8 @@
             this.btnCAPath = new System.Windows.Forms.Button();
             this.txtConnString = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPOPServerPort = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnChooseFile = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtIntervalTimer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +57,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnChooseFile = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSMTPServerPort = new System.Windows.Forms.TextBox();
+            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -84,23 +83,6 @@
             this.txtMailServerAddress.Size = new System.Drawing.Size(161, 20);
             this.txtMailServerAddress.TabIndex = 1;
             this.txtMailServerAddress.Text = "192.168.203.31";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(313, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "SMTP Port";
-            // 
-            // txtSMTPServerPort
-            // 
-            this.txtSMTPServerPort.Location = new System.Drawing.Point(372, 9);
-            this.txtSMTPServerPort.Name = "txtSMTPServerPort";
-            this.txtSMTPServerPort.Size = new System.Drawing.Size(65, 20);
-            this.txtSMTPServerPort.TabIndex = 3;
-            this.txtSMTPServerPort.Text = "25";
             // 
             // txtPassword
             // 
@@ -184,7 +166,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(362, 456);
+            this.btnStart.Location = new System.Drawing.Point(353, 489);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 11;
@@ -194,7 +176,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(452, 456);
+            this.btnStop.Location = new System.Drawing.Point(443, 489);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 12;
@@ -249,23 +231,6 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Chuỗi kết nối DB";
             // 
-            // txtPOPServerPort
-            // 
-            this.txtPOPServerPort.Location = new System.Drawing.Point(508, 9);
-            this.txtPOPServerPort.Name = "txtPOPServerPort";
-            this.txtPOPServerPort.Size = new System.Drawing.Size(65, 20);
-            this.txtPOPServerPort.TabIndex = 33;
-            this.txtPOPServerPort.Text = "995";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(451, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "POP3 Port";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnChooseFile);
@@ -279,6 +244,16 @@
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cấu hình SMTP";
+            // 
+            // btnChooseFile
+            // 
+            this.btnChooseFile.Location = new System.Drawing.Point(443, 23);
+            this.btnChooseFile.Name = "btnChooseFile";
+            this.btnChooseFile.Size = new System.Drawing.Size(150, 23);
+            this.btnChooseFile.TabIndex = 39;
+            this.btnChooseFile.Text = "Chọn loại hồ sơ upload";
+            this.btnChooseFile.UseVisualStyleBackColor = true;
+            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
             // 
             // groupBox3
             // 
@@ -310,13 +285,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.chkUseGmail);
             this.groupBox4.Controls.Add(this.chkEnableSecurity);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.txtCAPath);
             this.groupBox4.Controls.Add(this.btnCAPath);
             this.groupBox4.Location = new System.Drawing.Point(11, 375);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(866, 75);
+            this.groupBox4.Size = new System.Drawing.Size(866, 108);
             this.groupBox4.TabIndex = 36;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cấu hình truyền thư bảo mật";
@@ -370,28 +346,43 @@
             this.label11.TabIndex = 39;
             this.label11.Text = "Mã trung tâm";
             // 
-            // btnChooseFile
+            // label2
             // 
-            this.btnChooseFile.Location = new System.Drawing.Point(443, 23);
-            this.btnChooseFile.Name = "btnChooseFile";
-            this.btnChooseFile.Size = new System.Drawing.Size(150, 23);
-            this.btnChooseFile.TabIndex = 39;
-            this.btnChooseFile.Text = "Chọn loại hồ sơ upload";
-            this.btnChooseFile.UseVisualStyleBackColor = true;
-            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(313, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SMTP Port";
+            // 
+            // txtSMTPServerPort
+            // 
+            this.txtSMTPServerPort.Location = new System.Drawing.Point(372, 9);
+            this.txtSMTPServerPort.Name = "txtSMTPServerPort";
+            this.txtSMTPServerPort.Size = new System.Drawing.Size(124, 20);
+            this.txtSMTPServerPort.TabIndex = 3;
+            this.txtSMTPServerPort.Text = "25";
+            // 
+            // chkUseGmail
+            // 
+            this.chkUseGmail.AutoSize = true;
+            this.chkUseGmail.Location = new System.Drawing.Point(18, 75);
+            this.chkUseGmail.Name = "chkUseGmail";
+            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
+            this.chkUseGmail.TabIndex = 29;
+            this.chkUseGmail.Text = "Sử dụng gmail";
+            this.chkUseGmail.UseVisualStyleBackColor = true;
             // 
             // FormTTHTSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 486);
+            this.ClientSize = new System.Drawing.Size(889, 515);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtPOPServerPort);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtPassword);
@@ -426,8 +417,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMailServerAddress;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSMTPServerPort;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUser;
@@ -444,8 +433,6 @@
         private System.Windows.Forms.Button btnCAPath;
         private System.Windows.Forms.TextBox txtConnString;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPOPServerPort;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -457,6 +444,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnChooseFile;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSMTPServerPort;
+        private System.Windows.Forms.CheckBox chkUseGmail;
     }
 }
 

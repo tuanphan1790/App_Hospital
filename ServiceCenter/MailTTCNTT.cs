@@ -28,7 +28,7 @@ namespace ServiceCenter
         {
             BeginPullData();
 
-            BeginPushData();
+            //BeginPushData();
         }
 
         void MethodReceiveMail(object obj)
@@ -41,12 +41,12 @@ namespace ServiceCenter
         {
             string connectionString = txtConnString.Text;
 
-            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtPOPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
+            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtPOPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked, chkUseGmail.Checked);
             dbLibServer = new DBLib.DBServerApi(smtpSetting);
             if (chkEnableSecurity.Checked)
                 smtpSetting.CAPath = txtCAPath.Text;
 
-            dbLibServer.LoginPopServerMail(chkEnableSecurity.Checked);
+            dbLibServer.LoginPopServerMail();
 
             dbLibServer.intervalRequest = Convert.ToDouble(txtIntervalTimer.Text);
             dbLibServer.connectionString = connectionString;
@@ -57,14 +57,14 @@ namespace ServiceCenter
 
         void BeginPushData()
         {
-            string connectionString = txtConnString.Text;
+            //string connectionString = txtConnString.Text;
 
-            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtSMTPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
-            smtpSetting.MailAddressSend = txtUser.Text;
+            //DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtSMTPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
+            //smtpSetting.MailAddressSend = txtUser.Text;
             //smtpSetting.MailAddressReceive = txtMailTo.Text;
 
-            if (chkEnableSecurity.Checked)
-                smtpSetting.CAPath = txtCAPath.Text;
+            //if (chkEnableSecurity.Checked)
+                //smtpSetting.CAPath = txtCAPath.Text;
 
             //dbLibClient = new DBLib.DBClientApi("TT_A", smtpSetting);
             //dbLibClient.LoginMailServer();
@@ -75,14 +75,14 @@ namespace ServiceCenter
             //processWriteMail = new Thread(MethodSendMail);
             //processReadMail.Start(dbLibClient);
 
-            if (rbtAlwayAllowSyncTTHTSS.Checked)
-            {
+            //if (rbtAlwayAllowSyncTTHTSS.Checked)
+            //{
 
-            }
-            else if(rbtCheckSyncTTHTSS.Checked)
-            {
+            //}
+            //else if(rbtCheckSyncTTHTSS.Checked)
+            //{
 
-            }
+            //}
         }
 
         void MethodSendMail(object obj)

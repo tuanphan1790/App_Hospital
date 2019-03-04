@@ -46,15 +46,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtConnString = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSMTPServerPort = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbtCheckSyncTTHTSS = new System.Windows.Forms.RadioButton();
             this.rbtAlwayAllowSyncTTHTSS = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +62,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(415, 398);
+            this.btnStop.Location = new System.Drawing.Point(403, 455);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 24;
@@ -73,7 +72,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(325, 398);
+            this.btnStart.Location = new System.Drawing.Point(313, 455);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 23;
@@ -146,16 +145,16 @@
             // 
             // txtPOPServerPort
             // 
-            this.txtPOPServerPort.Location = new System.Drawing.Point(518, 13);
+            this.txtPOPServerPort.Location = new System.Drawing.Point(378, 12);
             this.txtPOPServerPort.Name = "txtPOPServerPort";
-            this.txtPOPServerPort.Size = new System.Drawing.Size(65, 20);
+            this.txtPOPServerPort.Size = new System.Drawing.Size(124, 20);
             this.txtPOPServerPort.TabIndex = 16;
             this.txtPOPServerPort.Text = "995";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(454, 16);
+            this.label2.Location = new System.Drawing.Point(310, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 15;
@@ -225,35 +224,19 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Chuỗi kết nối DB";
             // 
-            // txtSMTPServerPort
-            // 
-            this.txtSMTPServerPort.Location = new System.Drawing.Point(378, 12);
-            this.txtSMTPServerPort.Name = "txtSMTPServerPort";
-            this.txtSMTPServerPort.Size = new System.Drawing.Size(65, 20);
-            this.txtSMTPServerPort.TabIndex = 31;
-            this.txtSMTPServerPort.Text = "25";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(310, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "SMTP Port";
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.chkUseGmail);
             this.groupBox4.Controls.Add(this.txtCAPath);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.btnCAPath);
             this.groupBox4.Controls.Add(this.chkEnableSecurity);
             this.groupBox4.Location = new System.Drawing.Point(17, 317);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(774, 75);
+            this.groupBox4.Size = new System.Drawing.Size(774, 109);
             this.groupBox4.TabIndex = 39;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cấu hình truyền thư bảo mật";
+            this.groupBox4.Text = "Cho phép truyền thư bảo mật";
             // 
             // groupBox3
             // 
@@ -277,6 +260,18 @@
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cấu hình đồng bộ dữ liệu từ trung tâm CNTT về trung tâm HTSS";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(22, 68);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(565, 17);
+            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Cho phép những trung tâm HTSS trong danh sách không bị kiểm duyệt khi có yêu cầu " +
+    "đồng bộ dữ liệu bệnh nhân";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rbtCheckSyncTTHTSS
             // 
@@ -311,29 +306,25 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cấu hình DB";
             // 
-            // radioButton1
+            // chkUseGmail
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(22, 68);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(565, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cho phép những trung tâm HTSS trong danh sách không bị kiểm duyệt khi có yêu cầu " +
-    "đồng bộ dữ liệu bệnh nhân";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.chkUseGmail.AutoSize = true;
+            this.chkUseGmail.Location = new System.Drawing.Point(14, 80);
+            this.chkUseGmail.Name = "chkUseGmail";
+            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
+            this.chkUseGmail.TabIndex = 28;
+            this.chkUseGmail.Text = "Sử dụng gmail";
+            this.chkUseGmail.UseVisualStyleBackColor = true;
             // 
             // MailTTCNTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 431);
+            this.ClientSize = new System.Drawing.Size(804, 490);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtSMTPServerPort);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtPassword);
@@ -381,8 +372,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtConnString;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtSMTPServerPort;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -390,6 +379,7 @@
         private System.Windows.Forms.RadioButton rbtCheckSyncTTHTSS;
         private System.Windows.Forms.RadioButton rbtAlwayAllowSyncTTHTSS;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox chkUseGmail;
     }
 }
 

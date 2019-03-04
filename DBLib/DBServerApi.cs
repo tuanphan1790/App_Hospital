@@ -36,15 +36,26 @@ namespace DBLib
 
         bool checkPopClientConnected = false;
         bool enableSSL;
-        public void LoginPopServerMail(bool enableSSL)
+        public void LoginPopServerMail()
         {
             if (!checkPopClientConnected)
             {
-                this.enableSSL = enableSSL;
+                this.enableSSL = smtpSetting.EnableSSL;
                 if (!enableSSL)
                     popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL); //For no SSL     
                 else
-                    popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL, 3000, 3000, new RemoteCertificateValidationCallback(ValidateServerCertificate)); //For SSL 
+                {
+                    if (smtpSetting.UseGmail)
+                    {
+                        // Doi voi Gmail mail ()
+                        popClient.Connect("pop.gmail.com", 995, true);
+                    }
+                    else
+                    {
+                        // Doi voi Mercury mail ()
+                        popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL, 3000, 3000, new RemoteCertificateValidationCallback(ValidateServerCertificate)); //For SSL 
+                    }
+                }
 
                 popClient.Authenticate(smtpSetting.UserAddress, smtpSetting.Password, AuthenticationMethod.UsernameAndPassword);
                 checkPopClientConnected = true;
@@ -86,7 +97,7 @@ namespace DBLib
             TimerReadMail.Stop();
 
             ReadMailFromPopServer();
-            LoginPopServerMail(enableSSL);
+            LoginPopServerMail();
 
             TimerReadMail.Start();
         }
@@ -169,7 +180,7 @@ namespace DBLib
                     {
                         SaveMessageDB_HN_TieuSuKinhNguyet(message);
                     }
-                    else if(Sbj == Utilities.Header_HN_HoiBenh)
+                    else if (Sbj == Utilities.Header_HN_HoiBenh)
                     {
                         SaveMessageDB_HN_HoiBenh(message);
                     }

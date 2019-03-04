@@ -42,26 +42,73 @@ namespace DBLib
 
         public void LoginMailServer()
         {
-            mailClient = new SmtpClient(smtpSetting.SmtpServer, smtpSetting.SmtpPort) // port 25 is no security
-            {
-                Credentials = new NetworkCredential(smtpSetting.UserAddress, smtpSetting.Password),
-                EnableSsl = smtpSetting.EnableSSL
-            };
+            //try
+            //{
+            //    // Create instance of message
+            //    MailMessage message = new MailMessage();
 
-            if (smtpSetting.EnableSSL)
-            {
-                X509Certificate2 cert = new X509Certificate2(smtpSetting.CAPath);
+            //    // Add receiver
+            //    message.To.Add("tuanpa.bkhn@gmail.com");
 
-                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,
-                            X509Chain chain, SslPolicyErrors sslPolicyErrors)
+            //    // Set sender
+            //    // In this case the same as the username
+            //    message.From = new MailAddress("tuangerrard@gmail.com");
+
+            //    // Set subject
+            //    message.Subject = "Test";
+
+            //    // Set body of message
+            //    message.Body = "En test besked";
+
+            //    // Send the message
+            //    mailClient.Send(message);
+
+            //    // Clean up
+            //    message = null;
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Could not send e-mail. Exception caught: " + e);
+            //}
+
+            //Smtp with gmail
+            if (smtpSetting.EnableSSL && smtpSetting.UseGmail)
+            {
+                mailClient = new SmtpClient("smtp.gmail.com", 587);
+                mailClient.EnableSsl = true;
+                mailClient.UseDefaultCredentials = false;
+                mailClient.Credentials = new NetworkCredential(smtpSetting.UserAddress, smtpSetting.Password);
+
+                return;
+            }
+
+            //Smtp with Mercury
+            if (smtpSetting.EnableSSL && !smtpSetting.UseGmail)
+            {
+                mailClient = new SmtpClient(smtpSetting.SmtpServer, smtpSetting.SmtpPort) // port 25 is no security
                 {
-                    chain.Build(new X509Certificate2(certificate));
-
-                    if (chain.ChainElements[chain.ChainElements.Count - 1].Certificate.Thumbprint == cert.Thumbprint)
-                        return true;// success
-
-                    return false;
+                    Credentials = new NetworkCredential(smtpSetting.UserAddress, smtpSetting.Password),
+                    EnableSsl = smtpSetting.EnableSSL,
                 };
+
+                if (!smtpSetting.UseGmail)
+                {
+                    if (smtpSetting.EnableSSL)
+                    {
+                        X509Certificate2 cert = new X509Certificate2(smtpSetting.CAPath);
+
+                        ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate,
+                                    X509Chain chain, SslPolicyErrors sslPolicyErrors)
+                        {
+                            chain.Build(new X509Certificate2(certificate));
+
+                            if (chain.ChainElements[chain.ChainElements.Count - 1].Certificate.Thumbprint == cert.Thumbprint)
+                                return true;// success
+
+                        return false;
+                        };
+                    }
+                }
             }
         }
 

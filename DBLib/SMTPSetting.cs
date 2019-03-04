@@ -8,14 +8,17 @@ namespace DBLib
 {
     public class SMTPSetting
     {
-        public SMTPSetting(string smtpServer, int smtpPort, string userAddress, string password, bool enableSSL = false)
+        public SMTPSetting(string smtpServer, int smtpPort, string userAddress, string password, bool enableSSL, bool useGmail)
         {
             this.SmtpServer = smtpServer;
             this.SmtpPort = smtpPort;
             this.UserAddress = userAddress;
             this.Password = password;
             this.EnableSSL = enableSSL;
+            this.UseGmail = useGmail;
         }
+
+        public bool UseGmail { get; }
 
         public string CAPath { set; get; }
 

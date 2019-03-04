@@ -29,7 +29,7 @@ namespace SyncMailClient
         {
             string connectionString = txtConnString.Text;
 
-            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtSMTPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
+            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtSMTPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked, chkUseGmail.Checked);
             smtpSetting.MailAddressSend = txtUser.Text;
             smtpSetting.MailAddressReceive = txtMailTo.Text;
 
@@ -48,20 +48,20 @@ namespace SyncMailClient
 
         void BeginPullData()
         {
-            if (!chkEnableGetDataServer.Checked)
-                return;
+            //if (!chkEnableGetDataServer.Checked)
+            //    return;
 
-            string connectionString = txtConnString.Text;
+            //string connectionString = txtConnString.Text;
 
-            DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtPOPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
-            dbLibServer = new DBLib.DBServerApi(smtpSetting);
-            if (chkEnableSecurity.Checked)
-                smtpSetting.CAPath = txtCAPath.Text;
+            //DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtPOPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
+            //dbLibServer = new DBLib.DBServerApi(smtpSetting);
+            //if (chkEnableSecurity.Checked)
+            //    smtpSetting.CAPath = txtCAPath.Text;
 
-            dbLibServer.LoginPopServerMail(chkEnableSecurity.Checked);
+            //dbLibServer.LoginPopServerMail(chkEnableSecurity.Checked);
 
-            dbLibServer.intervalRequest = Convert.ToDouble(txtIntervalTimer.Text);
-            dbLibServer.connectionString = connectionString;
+            //dbLibServer.intervalRequest = Convert.ToDouble(txtIntervalTimer.Text);
+            //dbLibServer.connectionString = connectionString;
 
             //processWriteMail = new Thread(MethodReceiveMail);
             //processWriteMail.Start(dbLibServer);
