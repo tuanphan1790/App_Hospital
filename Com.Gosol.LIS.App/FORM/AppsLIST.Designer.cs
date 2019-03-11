@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppsLIST));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.heThongMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,10 +71,6 @@
             this.toolStripStatusLabel1.Text = "Thiết bị chưa được kết nối";
             // 
             // navBarGroup2
-            // 
-            this.navBarGroup2.Caption = "Quản trị hệ thống";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.Name = "navBarGroup2";
             // 
             // panel2
             // 
@@ -256,7 +251,6 @@
         #endregion
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem heThongMenuItem;

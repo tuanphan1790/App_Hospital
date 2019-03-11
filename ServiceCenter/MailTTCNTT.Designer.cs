@@ -47,13 +47,13 @@
             this.txtConnString = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbtCheckSyncTTHTSS = new System.Windows.Forms.RadioButton();
             this.rbtAlwayAllowSyncTTHTSS = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -115,7 +115,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(124, 20);
             this.txtPassword.TabIndex = 20;
-            this.txtPassword.Text = "2";
+            this.txtPassword.Text = "bvpstw123456";
             // 
             // label3
             // 
@@ -132,7 +132,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(161, 20);
             this.txtUser.TabIndex = 18;
-            this.txtUser.Text = "user2";
+            this.txtUser.Text = "bvps.server@gmail.com";
             // 
             // label4
             // 
@@ -238,6 +238,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cho phép truyền thư bảo mật";
             // 
+            // chkUseGmail
+            // 
+            this.chkUseGmail.AutoSize = true;
+            this.chkUseGmail.Location = new System.Drawing.Point(14, 80);
+            this.chkUseGmail.Name = "chkUseGmail";
+            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
+            this.chkUseGmail.TabIndex = 28;
+            this.chkUseGmail.Text = "Sử dụng gmail";
+            this.chkUseGmail.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtIntervalTimer);
@@ -305,16 +315,6 @@
             this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cấu hình DB";
-            // 
-            // chkUseGmail
-            // 
-            this.chkUseGmail.AutoSize = true;
-            this.chkUseGmail.Location = new System.Drawing.Point(14, 80);
-            this.chkUseGmail.Name = "chkUseGmail";
-            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
-            this.chkUseGmail.TabIndex = 28;
-            this.chkUseGmail.Text = "Sử dụng gmail";
-            this.chkUseGmail.UseVisualStyleBackColor = true;
             // 
             // MailTTCNTT
             // 

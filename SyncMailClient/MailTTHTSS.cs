@@ -22,9 +22,6 @@ namespace SyncMailClient
         Thread processReadMail;
         DBLib.DBClientApi dbLibClient;
 
-        Thread processWriteMail;
-        DBLib.DBServerApi dbLibServer;
-
         void BeginPushData(SettingChooseFile setting)
         {
             string connectionString = txtConnString.Text;
@@ -46,33 +43,6 @@ namespace SyncMailClient
             processReadMail.Start(dbLibClient);
         }
 
-        void BeginPullData()
-        {
-            //if (!chkEnableGetDataServer.Checked)
-            //    return;
-
-            //string connectionString = txtConnString.Text;
-
-            //DBLib.SMTPSetting smtpSetting = new DBLib.SMTPSetting(txtMailServerAddress.Text, Convert.ToInt32(txtPOPServerPort.Text), txtUser.Text, txtPassword.Text, chkEnableSecurity.Checked);
-            //dbLibServer = new DBLib.DBServerApi(smtpSetting);
-            //if (chkEnableSecurity.Checked)
-            //    smtpSetting.CAPath = txtCAPath.Text;
-
-            //dbLibServer.LoginPopServerMail(chkEnableSecurity.Checked);
-
-            //dbLibServer.intervalRequest = Convert.ToDouble(txtIntervalTimer.Text);
-            //dbLibServer.connectionString = connectionString;
-
-            //processWriteMail = new Thread(MethodReceiveMail);
-            //processWriteMail.Start(dbLibServer);
-        }
-
-        void MethodReceiveMail(object obj)
-        {
-            //DBLib.DBServerApi _dbLib = (DBLib.DBServerApi)obj;
-            //_dbLib.StartTimerReadEmail();
-        }
-
         void MethodSendMail(object obj)
         {
             DBLib.DBClientApi _dbLib = (DBLib.DBClientApi)obj;
@@ -81,8 +51,6 @@ namespace SyncMailClient
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //BeginPullData();
-
             if (settingChooseFile == null)
             {
                 MessageBox.Show("Bạn cần phải chọn các file được upload lên server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

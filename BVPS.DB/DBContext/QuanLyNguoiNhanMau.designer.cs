@@ -22,7 +22,7 @@ namespace BVPS.DB.DBContext
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss1")]
 	public partial class QuanLyNguoiNhanMauDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace BVPS.DB.DBContext
     #endregion
 		
 		public QuanLyNguoiNhanMauDataContext() : 
-				base(global::BVPS.DB.Properties.Settings.Default.htssConnectionString, mappingSource)
+				base(global::BVPS.DB.Properties.Settings.Default.htss1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

@@ -114,9 +114,6 @@ namespace DBLib
 
         public void StartConnectDB()
         {
-            bnhnDB = new BenhNhanHienNoanDB(connectionString);
-            bnhtDB = new BenhNhanHienTinhDB(connectionString);
-
             TimerReadDB = new System.Timers.Timer();
             TimerReadDB.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             TimerReadDB.Interval = intervalRequest;
@@ -137,7 +134,7 @@ namespace DBLib
             bnhtDB = new BenhNhanHienTinhDB(connectionString);
 
             RequestToDB_HT_ThongTinBenhNhan();
-            RequestToDB_NeedAddPattern();
+            //RequestToDB_NeedAddPattern();
             RequestToDB_HT_DacTrungNH();
             RequestToDB_HT_KQXN();
             RequestToDB_HT_KhamNamKhoa();
@@ -177,14 +174,14 @@ namespace DBLib
                 List<HT_ThongTinNguoiHienTinh> ttnhts = bnhtDB.GetAllNguoiHienTinh();
                 foreach (var ttnh in ttnhts)
                 {
-                    if (ttnh.FlagNeedSync && bnhtDB.CheckPatientApprove(ttnh.MaBN))
+                    if (bnhtDB.CheckPatientApprove(ttnh.MaBN))
                     {
-                        var message = new MailMessage(smtpSetting.MailAddressSend, smtpSetting.MailAddressReceive, Utilities.Header_HT_ThongTinNguoiHien, ttnh.CreateFileDataXML().ToString());
-                        //if (ttnh.FilePath != null)
-                        //    AttachmentFile(ref message, "Thông tin người hiến tinh " + ttnh.MaBN + " " + ttnh.NgayTao.ToString("dd-MM-yyyy"), ttnh.FilePath);
-
-                        mailClient.Send(message);
-                        bnhtDB.ResetInforSync_ThongTinBN(ttnh.MaBN);
+                        if (ttnh.FlagNeedSync)
+                        {
+                            var message = new MailMessage(smtpSetting.MailAddressSend, smtpSetting.MailAddressReceive, Utilities.Header_HT_ThongTinNguoiHien, ttnh.CreateFileDataXML().ToString());
+                            mailClient.Send(message);
+                            bnhtDB.ResetInforSync_ThongTinBN(ttnh.MaBN);
+                        }
                     }
                 }
             }

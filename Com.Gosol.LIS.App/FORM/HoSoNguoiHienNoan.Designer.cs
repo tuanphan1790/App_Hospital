@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -39,24 +37,26 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.HN_superTab = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.HN_cboQuanHuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.lblApprove = new DevComponents.DotNetBar.LabelX();
             this.HN_cboDanToc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.HN_cboTinhThanh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.HN_dtNgayTao = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX79 = new DevComponents.DotNetBar.LabelX();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.HN_lbMaBN = new DevComponents.DotNetBar.LabelX();
             this.labelX73 = new DevComponents.DotNetBar.LabelX();
@@ -301,7 +301,7 @@
             this.HN_sgHoiBenh = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.HN_tabHoiBenh = new DevComponents.DotNetBar.SuperTabItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.HN_cboQuanHuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HN_superTab)).BeginInit();
             this.HN_superTab.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -409,13 +409,13 @@
             // 
             this.superTabControlPanel1.CanvasColor = System.Drawing.Color.Maroon;
             this.superTabControlPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.superTabControlPanel1.Controls.Add(this.label5);
             this.superTabControlPanel1.Controls.Add(this.HN_cboQuanHuyen);
             this.superTabControlPanel1.Controls.Add(this.lblApprove);
             this.superTabControlPanel1.Controls.Add(this.HN_cboDanToc);
             this.superTabControlPanel1.Controls.Add(this.HN_cboTinhThanh);
             this.superTabControlPanel1.Controls.Add(this.HN_dtNgayTao);
             this.superTabControlPanel1.Controls.Add(this.labelX79);
-            this.superTabControlPanel1.Controls.Add(this.labelControl1);
             this.superTabControlPanel1.Controls.Add(this.groupBox1);
             this.superTabControlPanel1.Controls.Add(this.groupBox2);
             this.superTabControlPanel1.Controls.Add(this.HN_btnHuyBo);
@@ -448,6 +448,25 @@
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
+            // HN_cboQuanHuyen
+            // 
+            this.HN_cboQuanHuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.HN_cboQuanHuyen.DisplayMember = "TenThanhPho";
+            this.HN_cboQuanHuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.HN_cboQuanHuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HN_cboQuanHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HN_cboQuanHuyen.FormattingEnabled = true;
+            this.HN_cboQuanHuyen.ItemHeight = 20;
+            this.HN_cboQuanHuyen.Location = new System.Drawing.Point(219, 426);
+            this.HN_cboQuanHuyen.Name = "HN_cboQuanHuyen";
+            this.HN_cboQuanHuyen.Size = new System.Drawing.Size(203, 26);
+            this.HN_cboQuanHuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.HN_cboQuanHuyen.TabIndex = 155;
+            this.HN_cboQuanHuyen.ValueMember = "MaThanhPho";
+            this.HN_cboQuanHuyen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseClick);
+            this.HN_cboQuanHuyen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseDown);
+            this.HN_cboQuanHuyen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseUp);
+            // 
             // lblApprove
             // 
             this.lblApprove.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -458,7 +477,7 @@
             this.lblApprove.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApprove.ForeColor = System.Drawing.Color.Black;
-            this.lblApprove.Location = new System.Drawing.Point(493, 218);
+            this.lblApprove.Location = new System.Drawing.Point(490, 134);
             this.lblApprove.Name = "lblApprove";
             this.lblApprove.Size = new System.Drawing.Size(218, 23);
             this.lblApprove.TabIndex = 153;
@@ -474,7 +493,7 @@
             this.HN_cboDanToc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_cboDanToc.FormattingEnabled = true;
             this.HN_cboDanToc.ItemHeight = 20;
-            this.HN_cboDanToc.Location = new System.Drawing.Point(636, 281);
+            this.HN_cboDanToc.Location = new System.Drawing.Point(635, 234);
             this.HN_cboDanToc.Name = "HN_cboDanToc";
             this.HN_cboDanToc.Size = new System.Drawing.Size(211, 26);
             this.HN_cboDanToc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -490,7 +509,7 @@
             this.HN_cboTinhThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_cboTinhThanh.FormattingEnabled = true;
             this.HN_cboTinhThanh.ItemHeight = 20;
-            this.HN_cboTinhThanh.Location = new System.Drawing.Point(220, 432);
+            this.HN_cboTinhThanh.Location = new System.Drawing.Point(219, 385);
             this.HN_cboTinhThanh.Name = "HN_cboTinhThanh";
             this.HN_cboTinhThanh.Size = new System.Drawing.Size(203, 26);
             this.HN_cboTinhThanh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -513,7 +532,7 @@
             this.HN_dtNgayTao.ForeColor = System.Drawing.Color.Black;
             this.HN_dtNgayTao.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.HN_dtNgayTao.IsPopupCalendarOpen = false;
-            this.HN_dtNgayTao.Location = new System.Drawing.Point(636, 472);
+            this.HN_dtNgayTao.Location = new System.Drawing.Point(635, 425);
             // 
             // 
             // 
@@ -561,26 +580,11 @@
             this.labelX79.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX79.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX79.ForeColor = System.Drawing.Color.Black;
-            this.labelX79.Location = new System.Drawing.Point(468, 473);
+            this.labelX79.Location = new System.Drawing.Point(467, 426);
             this.labelX79.Name = "labelX79";
             this.labelX79.Size = new System.Drawing.Size(75, 23);
             this.labelX79.TabIndex = 133;
             this.labelX79.Text = "Ngày tạo";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl1.Appearance.Options.UseBackColor = true;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(401, 182);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(381, 33);
-            this.labelControl1.TabIndex = 132;
-            this.labelControl1.Text = "HỒ SƠ BỆNH NHÂN HIẾN NOÃN";
             // 
             // groupBox1
             // 
@@ -590,7 +594,7 @@
             this.groupBox1.Controls.Add(this.labelX73);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(52, 186);
+            this.groupBox1.Location = new System.Drawing.Point(49, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 71);
             this.groupBox1.TabIndex = 131;
@@ -801,7 +805,7 @@
             this.labelX27.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX27.ForeColor = System.Drawing.Color.Black;
-            this.labelX27.Location = new System.Drawing.Point(85, 431);
+            this.labelX27.Location = new System.Drawing.Point(84, 384);
             this.labelX27.Name = "labelX27";
             this.labelX27.Size = new System.Drawing.Size(141, 23);
             this.labelX27.TabIndex = 117;
@@ -817,7 +821,7 @@
             this.labelX26.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX26.ForeColor = System.Drawing.Color.Black;
-            this.labelX26.Location = new System.Drawing.Point(468, 277);
+            this.labelX26.Location = new System.Drawing.Point(467, 230);
             this.labelX26.Name = "labelX26";
             this.labelX26.Size = new System.Drawing.Size(75, 23);
             this.labelX26.TabIndex = 115;
@@ -839,7 +843,7 @@
             this.HN_dtNgayCap.ForeColor = System.Drawing.Color.Black;
             this.HN_dtNgayCap.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.HN_dtNgayCap.IsPopupCalendarOpen = false;
-            this.HN_dtNgayCap.Location = new System.Drawing.Point(636, 356);
+            this.HN_dtNgayCap.Location = new System.Drawing.Point(635, 309);
             // 
             // 
             // 
@@ -888,7 +892,7 @@
             this.HN_txtDiaChiNoiCap.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtDiaChiNoiCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtDiaChiNoiCap.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtDiaChiNoiCap.Location = new System.Drawing.Point(636, 434);
+            this.HN_txtDiaChiNoiCap.Location = new System.Drawing.Point(635, 387);
             this.HN_txtDiaChiNoiCap.Name = "HN_txtDiaChiNoiCap";
             this.HN_txtDiaChiNoiCap.Size = new System.Drawing.Size(212, 26);
             this.HN_txtDiaChiNoiCap.TabIndex = 105;
@@ -903,7 +907,7 @@
             this.labelX31.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX31.ForeColor = System.Drawing.Color.Black;
-            this.labelX31.Location = new System.Drawing.Point(467, 434);
+            this.labelX31.Location = new System.Drawing.Point(466, 387);
             this.labelX31.Name = "labelX31";
             this.labelX31.Size = new System.Drawing.Size(163, 23);
             this.labelX31.TabIndex = 104;
@@ -920,7 +924,7 @@
             this.HN_txtNguyenQuan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtNguyenQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtNguyenQuan.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtNguyenQuan.Location = new System.Drawing.Point(636, 395);
+            this.HN_txtNguyenQuan.Location = new System.Drawing.Point(635, 348);
             this.HN_txtNguyenQuan.Name = "HN_txtNguyenQuan";
             this.HN_txtNguyenQuan.Size = new System.Drawing.Size(212, 26);
             this.HN_txtNguyenQuan.TabIndex = 103;
@@ -935,7 +939,7 @@
             this.labelX30.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX30.ForeColor = System.Drawing.Color.Black;
-            this.labelX30.Location = new System.Drawing.Point(467, 395);
+            this.labelX30.Location = new System.Drawing.Point(466, 348);
             this.labelX30.Name = "labelX30";
             this.labelX30.Size = new System.Drawing.Size(124, 23);
             this.labelX30.TabIndex = 102;
@@ -951,7 +955,7 @@
             this.labelX29.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX29.ForeColor = System.Drawing.Color.Black;
-            this.labelX29.Location = new System.Drawing.Point(467, 357);
+            this.labelX29.Location = new System.Drawing.Point(466, 310);
             this.labelX29.Name = "labelX29";
             this.labelX29.Size = new System.Drawing.Size(75, 23);
             this.labelX29.TabIndex = 101;
@@ -968,7 +972,7 @@
             this.HN_txtSoCMND.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtSoCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtSoCMND.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtSoCMND.Location = new System.Drawing.Point(636, 318);
+            this.HN_txtSoCMND.Location = new System.Drawing.Point(635, 271);
             this.HN_txtSoCMND.Name = "HN_txtSoCMND";
             this.HN_txtSoCMND.Size = new System.Drawing.Size(212, 26);
             this.HN_txtSoCMND.TabIndex = 100;
@@ -983,7 +987,7 @@
             this.labelX28.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX28.ForeColor = System.Drawing.Color.Black;
-            this.labelX28.Location = new System.Drawing.Point(467, 318);
+            this.labelX28.Location = new System.Drawing.Point(466, 271);
             this.labelX28.Name = "labelX28";
             this.labelX28.Size = new System.Drawing.Size(103, 23);
             this.labelX28.TabIndex = 99;
@@ -999,7 +1003,7 @@
             this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX19.ForeColor = System.Drawing.Color.Black;
-            this.labelX19.Location = new System.Drawing.Point(86, 281);
+            this.labelX19.Location = new System.Drawing.Point(85, 234);
             this.labelX19.Name = "labelX19";
             this.labelX19.SingleLineColor = System.Drawing.Color.White;
             this.labelX19.Size = new System.Drawing.Size(123, 22);
@@ -1017,7 +1021,7 @@
             this.HN_txtHoVaTen.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtHoVaTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtHoVaTen.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtHoVaTen.Location = new System.Drawing.Point(220, 281);
+            this.HN_txtHoVaTen.Location = new System.Drawing.Point(219, 234);
             this.HN_txtHoVaTen.Name = "HN_txtHoVaTen";
             this.HN_txtHoVaTen.Size = new System.Drawing.Size(203, 26);
             this.HN_txtHoVaTen.TabIndex = 88;
@@ -1048,7 +1052,7 @@
             this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX20.ForeColor = System.Drawing.Color.Black;
-            this.labelX20.Location = new System.Drawing.Point(86, 318);
+            this.labelX20.Location = new System.Drawing.Point(85, 271);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(123, 23);
             this.labelX20.TabIndex = 89;
@@ -1065,7 +1069,7 @@
             this.HN_txtSoDienThoai.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtSoDienThoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtSoDienThoai.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtSoDienThoai.Location = new System.Drawing.Point(220, 355);
+            this.HN_txtSoDienThoai.Location = new System.Drawing.Point(219, 308);
             this.HN_txtSoDienThoai.Name = "HN_txtSoDienThoai";
             this.HN_txtSoDienThoai.Size = new System.Drawing.Size(203, 26);
             this.HN_txtSoDienThoai.TabIndex = 92;
@@ -1081,7 +1085,7 @@
             this.HN_txtEmail.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.HN_txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HN_txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.HN_txtEmail.Location = new System.Drawing.Point(220, 396);
+            this.HN_txtEmail.Location = new System.Drawing.Point(219, 349);
             this.HN_txtEmail.Name = "HN_txtEmail";
             this.HN_txtEmail.Size = new System.Drawing.Size(203, 26);
             this.HN_txtEmail.TabIndex = 94;
@@ -1102,7 +1106,7 @@
             this.HN_dtNgaySinh.ForeColor = System.Drawing.Color.Black;
             this.HN_dtNgaySinh.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.HN_dtNgaySinh.IsPopupCalendarOpen = false;
-            this.HN_dtNgaySinh.Location = new System.Drawing.Point(220, 319);
+            this.HN_dtNgaySinh.Location = new System.Drawing.Point(219, 272);
             // 
             // 
             // 
@@ -1150,7 +1154,7 @@
             this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX21.ForeColor = System.Drawing.Color.Black;
-            this.labelX21.Location = new System.Drawing.Point(86, 354);
+            this.labelX21.Location = new System.Drawing.Point(85, 307);
             this.labelX21.Name = "labelX21";
             this.labelX21.SingleLineColor = System.Drawing.SystemColors.Control;
             this.labelX21.Size = new System.Drawing.Size(123, 23);
@@ -1567,18 +1571,18 @@
             this.HN_sgBenhToanThan.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgBenhToanThan.PrimaryGrid.AllowRowResize = true;
             this.HN_sgBenhToanThan.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn17.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn17.DataPropertyName = "";
-            gridColumn17.HeaderText = "Id";
-            gridColumn17.Name = "Id";
-            gridColumn17.Visible = false;
-            gridColumn18.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn18.DataPropertyName = "TrangThai";
-            gridColumn18.FilterAutoScan = true;
-            gridColumn18.HeaderText = "Ngày khám";
-            gridColumn18.Name = "NgayTao";
-            this.HN_sgBenhToanThan.PrimaryGrid.Columns.Add(gridColumn17);
-            this.HN_sgBenhToanThan.PrimaryGrid.Columns.Add(gridColumn18);
+            gridColumn19.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn19.DataPropertyName = "";
+            gridColumn19.HeaderText = "Id";
+            gridColumn19.Name = "Id";
+            gridColumn19.Visible = false;
+            gridColumn20.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn20.DataPropertyName = "TrangThai";
+            gridColumn20.FilterAutoScan = true;
+            gridColumn20.HeaderText = "Ngày khám";
+            gridColumn20.Name = "NgayTao";
+            this.HN_sgBenhToanThan.PrimaryGrid.Columns.Add(gridColumn19);
+            this.HN_sgBenhToanThan.PrimaryGrid.Columns.Add(gridColumn20);
             this.HN_sgBenhToanThan.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgBenhToanThan.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgBenhToanThan.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -2043,18 +2047,18 @@
             this.HN_sgNguoiVanDong.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgNguoiVanDong.PrimaryGrid.AllowRowResize = true;
             this.HN_sgNguoiVanDong.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn19.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn19.DataPropertyName = "";
-            gridColumn19.HeaderText = "Id";
-            gridColumn19.Name = "Id";
-            gridColumn19.Visible = false;
-            gridColumn20.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn20.DataPropertyName = "TrangThai";
-            gridColumn20.FilterAutoScan = true;
-            gridColumn20.HeaderText = "Ngày khám";
-            gridColumn20.Name = "NgayTao";
-            this.HN_sgNguoiVanDong.PrimaryGrid.Columns.Add(gridColumn19);
-            this.HN_sgNguoiVanDong.PrimaryGrid.Columns.Add(gridColumn20);
+            gridColumn21.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn21.DataPropertyName = "";
+            gridColumn21.HeaderText = "Id";
+            gridColumn21.Name = "Id";
+            gridColumn21.Visible = false;
+            gridColumn22.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn22.DataPropertyName = "TrangThai";
+            gridColumn22.FilterAutoScan = true;
+            gridColumn22.HeaderText = "Ngày khám";
+            gridColumn22.Name = "NgayTao";
+            this.HN_sgNguoiVanDong.PrimaryGrid.Columns.Add(gridColumn21);
+            this.HN_sgNguoiVanDong.PrimaryGrid.Columns.Add(gridColumn22);
             this.HN_sgNguoiVanDong.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgNguoiVanDong.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgNguoiVanDong.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -2530,18 +2534,18 @@
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.AllowRowResize = true;
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn21.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn21.DataPropertyName = "";
-            gridColumn21.HeaderText = "Id";
-            gridColumn21.Name = "Id";
-            gridColumn21.Visible = false;
-            gridColumn22.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn22.DataPropertyName = "TrangThai";
-            gridColumn22.FilterAutoScan = true;
-            gridColumn22.HeaderText = "Ngày khám";
-            gridColumn22.Name = "NgayTao";
-            this.HN_sgTieuSuKinhNguyet.PrimaryGrid.Columns.Add(gridColumn21);
-            this.HN_sgTieuSuKinhNguyet.PrimaryGrid.Columns.Add(gridColumn22);
+            gridColumn1.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn1.DataPropertyName = "";
+            gridColumn1.HeaderText = "Id";
+            gridColumn1.Name = "Id";
+            gridColumn1.Visible = false;
+            gridColumn2.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn2.DataPropertyName = "TrangThai";
+            gridColumn2.FilterAutoScan = true;
+            gridColumn2.HeaderText = "Ngày khám";
+            gridColumn2.Name = "NgayTao";
+            this.HN_sgTieuSuKinhNguyet.PrimaryGrid.Columns.Add(gridColumn1);
+            this.HN_sgTieuSuKinhNguyet.PrimaryGrid.Columns.Add(gridColumn2);
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgTieuSuKinhNguyet.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -2960,18 +2964,18 @@
             this.HN_sgKQXN.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgKQXN.PrimaryGrid.AllowRowResize = true;
             this.HN_sgKQXN.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn1.DataPropertyName = "";
-            gridColumn1.HeaderText = "Id";
-            gridColumn1.Name = "Id";
-            gridColumn1.Visible = false;
-            gridColumn2.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn2.DataPropertyName = "TrangThai";
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.HeaderText = "Ngày khám";
-            gridColumn2.Name = "NgayTao";
-            this.HN_sgKQXN.PrimaryGrid.Columns.Add(gridColumn1);
-            this.HN_sgKQXN.PrimaryGrid.Columns.Add(gridColumn2);
+            gridColumn3.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn3.DataPropertyName = "";
+            gridColumn3.HeaderText = "Id";
+            gridColumn3.Name = "Id";
+            gridColumn3.Visible = false;
+            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn4.DataPropertyName = "TrangThai";
+            gridColumn4.FilterAutoScan = true;
+            gridColumn4.HeaderText = "Ngày khám";
+            gridColumn4.Name = "NgayTao";
+            this.HN_sgKQXN.PrimaryGrid.Columns.Add(gridColumn3);
+            this.HN_sgKQXN.PrimaryGrid.Columns.Add(gridColumn4);
             this.HN_sgKQXN.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgKQXN.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgKQXN.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -3017,27 +3021,27 @@
             this.HN_sgLuuTruHoSo.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgLuuTruHoSo.PrimaryGrid.AllowRowResize = true;
             this.HN_sgLuuTruHoSo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn3.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn3.DataPropertyName = "";
-            gridColumn3.HeaderText = "Id";
-            gridColumn3.Name = "ID";
-            gridColumn3.Visible = false;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridLabelXEditControl);
-            gridColumn4.HeaderText = "Tên văn bản";
-            gridColumn4.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
-            gridColumn4.Name = "TenVanBan";
-            gridColumn31.HeaderText = "Số lượng file";
-            gridColumn31.Name = "SoLuong";
-            gridColumn32.CellHighlightMode = DevComponents.DotNetBar.SuperGrid.Style.CellHighlightMode.Content;
-            gridColumn32.HeaderText = "Tải tài liệu";
-            gridColumn32.Name = "UploadFile";
-            gridColumn32.RenderType = typeof(DevComponents.DotNetBar.SuperGrid.GridTextBoxXEditControl);
-            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn3);
-            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn4);
-            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn31);
-            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn32);
+            gridColumn5.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn5.DataPropertyName = "";
+            gridColumn5.HeaderText = "Id";
+            gridColumn5.Name = "ID";
+            gridColumn5.Visible = false;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridLabelXEditControl);
+            gridColumn6.HeaderText = "Tên văn bản";
+            gridColumn6.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
+            gridColumn6.Name = "TenVanBan";
+            gridColumn27.HeaderText = "Số lượng file";
+            gridColumn27.Name = "SoLuong";
+            gridColumn28.CellHighlightMode = DevComponents.DotNetBar.SuperGrid.Style.CellHighlightMode.Content;
+            gridColumn28.HeaderText = "Tải tài liệu";
+            gridColumn28.Name = "UploadFile";
+            gridColumn28.RenderType = typeof(DevComponents.DotNetBar.SuperGrid.GridTextBoxXEditControl);
+            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn5);
+            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn6);
+            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn27);
+            this.HN_sgLuuTruHoSo.PrimaryGrid.Columns.Add(gridColumn28);
             this.HN_sgLuuTruHoSo.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgLuuTruHoSo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgLuuTruHoSo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -3237,19 +3241,19 @@
             this.HN_sgKhamHongXuongChau.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgKhamHongXuongChau.PrimaryGrid.AllowRowResize = true;
             this.HN_sgKhamHongXuongChau.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn33.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn33.DataPropertyName = "";
-            gridColumn33.HeaderText = "Id";
-            gridColumn33.Name = "Id";
-            gridColumn33.Visible = false;
-            gridColumn34.AllowEdit = false;
-            gridColumn34.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn34.DataPropertyName = "TrangThai";
-            gridColumn34.FilterAutoScan = true;
-            gridColumn34.HeaderText = "Ngày khám";
-            gridColumn34.Name = "NgayTao";
-            this.HN_sgKhamHongXuongChau.PrimaryGrid.Columns.Add(gridColumn33);
-            this.HN_sgKhamHongXuongChau.PrimaryGrid.Columns.Add(gridColumn34);
+            gridColumn29.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn29.DataPropertyName = "";
+            gridColumn29.HeaderText = "Id";
+            gridColumn29.Name = "Id";
+            gridColumn29.Visible = false;
+            gridColumn30.AllowEdit = false;
+            gridColumn30.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn30.DataPropertyName = "TrangThai";
+            gridColumn30.FilterAutoScan = true;
+            gridColumn30.HeaderText = "Ngày khám";
+            gridColumn30.Name = "NgayTao";
+            this.HN_sgKhamHongXuongChau.PrimaryGrid.Columns.Add(gridColumn29);
+            this.HN_sgKhamHongXuongChau.PrimaryGrid.Columns.Add(gridColumn30);
             this.HN_sgKhamHongXuongChau.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgKhamHongXuongChau.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgKhamHongXuongChau.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -4171,19 +4175,19 @@
             this.HN_sgBenhTinhDuc.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgBenhTinhDuc.PrimaryGrid.AllowRowResize = true;
             this.HN_sgBenhTinhDuc.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn29.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn29.DataPropertyName = "";
-            gridColumn29.HeaderText = "Id";
-            gridColumn29.Name = "Id";
-            gridColumn29.Visible = false;
-            gridColumn30.AllowEdit = false;
-            gridColumn30.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn30.DataPropertyName = "TrangThai";
-            gridColumn30.FilterAutoScan = true;
-            gridColumn30.HeaderText = "Ngày khám";
-            gridColumn30.Name = "NgayTao";
-            this.HN_sgBenhTinhDuc.PrimaryGrid.Columns.Add(gridColumn29);
-            this.HN_sgBenhTinhDuc.PrimaryGrid.Columns.Add(gridColumn30);
+            gridColumn25.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn25.DataPropertyName = "";
+            gridColumn25.HeaderText = "Id";
+            gridColumn25.Name = "Id";
+            gridColumn25.Visible = false;
+            gridColumn26.AllowEdit = false;
+            gridColumn26.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn26.DataPropertyName = "TrangThai";
+            gridColumn26.FilterAutoScan = true;
+            gridColumn26.HeaderText = "Ngày khám";
+            gridColumn26.Name = "NgayTao";
+            this.HN_sgBenhTinhDuc.PrimaryGrid.Columns.Add(gridColumn25);
+            this.HN_sgBenhTinhDuc.PrimaryGrid.Columns.Add(gridColumn26);
             this.HN_sgBenhTinhDuc.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgBenhTinhDuc.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgBenhTinhDuc.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -4604,19 +4608,19 @@
             this.HN_sgTienSuSS.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgTienSuSS.PrimaryGrid.AllowRowResize = true;
             this.HN_sgTienSuSS.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn25.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn25.DataPropertyName = "";
-            gridColumn25.HeaderText = "Id";
-            gridColumn25.Name = "Id";
-            gridColumn25.Visible = false;
-            gridColumn26.AllowEdit = false;
-            gridColumn26.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn26.DataPropertyName = "TrangThai";
-            gridColumn26.FilterAutoScan = true;
-            gridColumn26.HeaderText = "Ngày khám";
-            gridColumn26.Name = "NgayTao";
-            this.HN_sgTienSuSS.PrimaryGrid.Columns.Add(gridColumn25);
-            this.HN_sgTienSuSS.PrimaryGrid.Columns.Add(gridColumn26);
+            gridColumn13.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn13.DataPropertyName = "";
+            gridColumn13.HeaderText = "Id";
+            gridColumn13.Name = "Id";
+            gridColumn13.Visible = false;
+            gridColumn14.AllowEdit = false;
+            gridColumn14.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn14.DataPropertyName = "TrangThai";
+            gridColumn14.FilterAutoScan = true;
+            gridColumn14.HeaderText = "Ngày khám";
+            gridColumn14.Name = "NgayTao";
+            this.HN_sgTienSuSS.PrimaryGrid.Columns.Add(gridColumn13);
+            this.HN_sgTienSuSS.PrimaryGrid.Columns.Add(gridColumn14);
             this.HN_sgTienSuSS.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgTienSuSS.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgTienSuSS.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -4937,19 +4941,19 @@
             this.HN_sgHoiBenh.PrimaryGrid.AllowRowHeaderResize = true;
             this.HN_sgHoiBenh.PrimaryGrid.AllowRowResize = true;
             this.HN_sgHoiBenh.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn13.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn13.DataPropertyName = "";
-            gridColumn13.HeaderText = "Id";
-            gridColumn13.Name = "Id";
-            gridColumn13.Visible = false;
-            gridColumn14.AllowEdit = false;
-            gridColumn14.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            gridColumn14.DataPropertyName = "TrangThai";
-            gridColumn14.FilterAutoScan = true;
-            gridColumn14.HeaderText = "Ngày khám";
-            gridColumn14.Name = "NgayTao";
-            this.HN_sgHoiBenh.PrimaryGrid.Columns.Add(gridColumn13);
-            this.HN_sgHoiBenh.PrimaryGrid.Columns.Add(gridColumn14);
+            gridColumn15.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn15.DataPropertyName = "";
+            gridColumn15.HeaderText = "Id";
+            gridColumn15.Name = "Id";
+            gridColumn15.Visible = false;
+            gridColumn16.AllowEdit = false;
+            gridColumn16.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            gridColumn16.DataPropertyName = "TrangThai";
+            gridColumn16.FilterAutoScan = true;
+            gridColumn16.HeaderText = "Ngày khám";
+            gridColumn16.Name = "NgayTao";
+            this.HN_sgHoiBenh.PrimaryGrid.Columns.Add(gridColumn15);
+            this.HN_sgHoiBenh.PrimaryGrid.Columns.Add(gridColumn16);
             this.HN_sgHoiBenh.PrimaryGrid.DefaultRowHeight = 24;
             this.HN_sgHoiBenh.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.HN_sgHoiBenh.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -4972,24 +4976,17 @@
             this.HN_tabHoiBenh.Text = "HỎI BỆNH";
             this.HN_tabHoiBenh.Click += new System.EventHandler(this.HN_tabHoiBenh_Click);
             // 
-            // HN_cboQuanHuyen
+            // label5
             // 
-            this.HN_cboQuanHuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.HN_cboQuanHuyen.DisplayMember = "TenThanhPho";
-            this.HN_cboQuanHuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.HN_cboQuanHuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HN_cboQuanHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HN_cboQuanHuyen.FormattingEnabled = true;
-            this.HN_cboQuanHuyen.ItemHeight = 20;
-            this.HN_cboQuanHuyen.Location = new System.Drawing.Point(220, 473);
-            this.HN_cboQuanHuyen.Name = "HN_cboQuanHuyen";
-            this.HN_cboQuanHuyen.Size = new System.Drawing.Size(203, 26);
-            this.HN_cboQuanHuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.HN_cboQuanHuyen.TabIndex = 155;
-            this.HN_cboQuanHuyen.ValueMember = "MaThanhPho";
-            this.HN_cboQuanHuyen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseClick);
-            this.HN_cboQuanHuyen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseDown);
-            this.HN_cboQuanHuyen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.HN_cboQuanHuyen_MouseUp);
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(369, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(453, 31);
+            this.label5.TabIndex = 156;
+            this.label5.Text = "HỒ SƠ BỆNH NHÂN HIẾN NOÃN";
             // 
             // HoSoNguoiHienNoan
             // 
@@ -5096,7 +5093,6 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput HN_dtNgayTao;
         private DevComponents.DotNetBar.LabelX labelX79;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.LabelX HN_lbMaBN;
         private DevComponents.DotNetBar.LabelX labelX73;
@@ -5312,5 +5308,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX HN_txtNhietDo;
         private DevComponents.DotNetBar.LabelX labelX55;
         private DevComponents.DotNetBar.Controls.ComboBoxEx HN_cboQuanHuyen;
+        private System.Windows.Forms.Label label5;
     }
 }

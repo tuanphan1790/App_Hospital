@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss" Class="ThongTinBenhNhanHienNoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htssConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="htss1" Class="ThongTinBenhNhanHienNoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7NOQEV1\SQLEXPRESS;Initial Catalog=htss1;Integrated Security=True" SettingsObjectName="BVPS.DB.Properties.Settings" SettingsPropertyName="htss1ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.dtb_patient_ovule_send" Member="dtb_patient_ovule_sends">
     <Type Name="dtb_patient_ovule_send">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -30,7 +30,7 @@
       <Column Name="class_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ma_tt" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="flag_approve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.dtb_ovule_benhtoanthan" Member="dtb_ovule_benhtoanthans">
@@ -46,101 +46,7 @@
       <Column Name="nhiem_trung_tiet_nieu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_benhtinhduc" Member="dtb_ovule_benhtinhducs">
-    <Type Name="dtb_ovule_benhtinhduc">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="lau" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="giang_mai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="chlamydia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="benh_khac" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_tiensusinhsan" Member="dtb_ovule_tiensusinhsans">
-    <Type Name="dtb_ovule_tiensusinhsan">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="so_lan_co_thai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="so_luong_de_con_song" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="nao_hut" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thai_luu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="chua_ngoai_da_con" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="chua_trung" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_xetnghiem" Member="dtb_ovule_xetnghiems">
-    <Type Name="dtb_ovule_xetnghiem">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="group_blood" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="hiv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="bw" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="hbsag" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="antihcv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="num_of_check" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_relation" Member="dtb_ovule_relations">
-    <Type Name="dtb_ovule_relation">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="date_of_birth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="identify" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="date_of_id" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="address_of_id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="province_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="nation_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="district_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="type_of_class" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_kinhnguyet" Member="dtb_ovule_kinhnguyets">
-    <Type Name="dtb_ovule_kinhnguyet">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="tuoi_co_kinh_lan_dau" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="chu_ky_kinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="so_ngay_co_kinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="so_luong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.dtb_ovule_hoibenh" Member="dtb_ovule_hoibenhs">
-    <Type Name="dtb_ovule_hoibenh">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="detail_data_tiensunoikhoa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="have_data_tiensunoikhoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="detail_data_tiensungoaikhoa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="have_data_tiensungoaikhoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.dtb_ovule_khambenh" Member="dtb_ovule_khambenhs">
@@ -163,12 +69,107 @@
       <Column Name="hai_phan_phu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
       <Column Name="height" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="weight" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="huyet_ap" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="nhiet_do" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="mach" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nhiet_do" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_benhtinhduc" Member="dtb_ovule_benhtinhducs">
+    <Type Name="dtb_ovule_benhtinhduc">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lau" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="giang_mai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="chlamydia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="benh_khac" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_hoibenh" Member="dtb_ovule_hoibenhs">
+    <Type Name="dtb_ovule_hoibenh">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="detail_data_tiensunoikhoa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="have_data_tiensunoikhoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="detail_data_tiensungoaikhoa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="have_data_tiensungoaikhoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_tiensusinhsan" Member="dtb_ovule_tiensusinhsans">
+    <Type Name="dtb_ovule_tiensusinhsan">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="so_lan_co_thai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="so_luong_de_con_song" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nao_hut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thai_luu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chua_ngoai_da_con" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chua_trung" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_xetnghiem" Member="dtb_ovule_xetnghiems">
+    <Type Name="dtb_ovule_xetnghiem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="group_blood" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hiv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="bw" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hbsag" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="antihcv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="num_of_check" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_relation" Member="dtb_ovule_relations">
+    <Type Name="dtb_ovule_relation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="date_of_birth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date_of_id" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="address_of_id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="province_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nation_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="district_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="type_of_class" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dtb_ovule_kinhnguyet" Member="dtb_ovule_kinhnguyets">
+    <Type Name="dtb_ovule_kinhnguyet">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patient_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tuoi_co_kinh_lan_dau" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chu_ky_kinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="so_ngay_co_kinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="so_luong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="flag_need_sync" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

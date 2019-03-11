@@ -22,7 +22,7 @@ namespace BVPS.DB.DBContext
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss1")]
 	public partial class ThongTinBenhNhanHienNoanDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,9 +36,15 @@ namespace BVPS.DB.DBContext
     partial void Insertdtb_ovule_benhtoanthan(dtb_ovule_benhtoanthan instance);
     partial void Updatedtb_ovule_benhtoanthan(dtb_ovule_benhtoanthan instance);
     partial void Deletedtb_ovule_benhtoanthan(dtb_ovule_benhtoanthan instance);
+    partial void Insertdtb_ovule_khambenh(dtb_ovule_khambenh instance);
+    partial void Updatedtb_ovule_khambenh(dtb_ovule_khambenh instance);
+    partial void Deletedtb_ovule_khambenh(dtb_ovule_khambenh instance);
     partial void Insertdtb_ovule_benhtinhduc(dtb_ovule_benhtinhduc instance);
     partial void Updatedtb_ovule_benhtinhduc(dtb_ovule_benhtinhduc instance);
     partial void Deletedtb_ovule_benhtinhduc(dtb_ovule_benhtinhduc instance);
+    partial void Insertdtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
+    partial void Updatedtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
+    partial void Deletedtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
     partial void Insertdtb_ovule_tiensusinhsan(dtb_ovule_tiensusinhsan instance);
     partial void Updatedtb_ovule_tiensusinhsan(dtb_ovule_tiensusinhsan instance);
     partial void Deletedtb_ovule_tiensusinhsan(dtb_ovule_tiensusinhsan instance);
@@ -51,16 +57,10 @@ namespace BVPS.DB.DBContext
     partial void Insertdtb_ovule_kinhnguyet(dtb_ovule_kinhnguyet instance);
     partial void Updatedtb_ovule_kinhnguyet(dtb_ovule_kinhnguyet instance);
     partial void Deletedtb_ovule_kinhnguyet(dtb_ovule_kinhnguyet instance);
-    partial void Insertdtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
-    partial void Updatedtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
-    partial void Deletedtb_ovule_hoibenh(dtb_ovule_hoibenh instance);
-    partial void Insertdtb_ovule_khambenh(dtb_ovule_khambenh instance);
-    partial void Updatedtb_ovule_khambenh(dtb_ovule_khambenh instance);
-    partial void Deletedtb_ovule_khambenh(dtb_ovule_khambenh instance);
     #endregion
 		
 		public ThongTinBenhNhanHienNoanDataContext() : 
-				base(global::BVPS.DB.Properties.Settings.Default.htssConnectionString, mappingSource)
+				base(global::BVPS.DB.Properties.Settings.Default.htss1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -105,11 +105,27 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
+		public System.Data.Linq.Table<dtb_ovule_khambenh> dtb_ovule_khambenhs
+		{
+			get
+			{
+				return this.GetTable<dtb_ovule_khambenh>();
+			}
+		}
+		
 		public System.Data.Linq.Table<dtb_ovule_benhtinhduc> dtb_ovule_benhtinhducs
 		{
 			get
 			{
 				return this.GetTable<dtb_ovule_benhtinhduc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<dtb_ovule_hoibenh> dtb_ovule_hoibenhs
+		{
+			get
+			{
+				return this.GetTable<dtb_ovule_hoibenh>();
 			}
 		}
 		
@@ -142,22 +158,6 @@ namespace BVPS.DB.DBContext
 			get
 			{
 				return this.GetTable<dtb_ovule_kinhnguyet>();
-			}
-		}
-		
-		public System.Data.Linq.Table<dtb_ovule_hoibenh> dtb_ovule_hoibenhs
-		{
-			get
-			{
-				return this.GetTable<dtb_ovule_hoibenh>();
-			}
-		}
-		
-		public System.Data.Linq.Table<dtb_ovule_khambenh> dtb_ovule_khambenhs
-		{
-			get
-			{
-				return this.GetTable<dtb_ovule_khambenh>();
 			}
 		}
 	}
@@ -224,7 +224,7 @@ namespace BVPS.DB.DBContext
 		
 		private System.Nullable<bool> _flag_approve;
 		
-		private System.Nullable<bool> _status;
+		private System.Nullable<byte> _status;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -286,7 +286,7 @@ namespace BVPS.DB.DBContext
     partial void Onma_ttChanged();
     partial void Onflag_approveChanging(System.Nullable<bool> value);
     partial void Onflag_approveChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
+    partial void OnstatusChanging(System.Nullable<byte> value);
     partial void OnstatusChanged();
     #endregion
 		
@@ -855,8 +855,8 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
 		{
 			get
 			{
@@ -924,7 +924,7 @@ namespace BVPS.DB.DBContext
 		
 		private System.Nullable<bool> _flag_need_sync;
 		
-		private System.Nullable<bool> _status;
+		private System.Nullable<byte> _status;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -952,7 +952,7 @@ namespace BVPS.DB.DBContext
     partial void Onghi_chuChanged();
     partial void Onflag_need_syncChanging(System.Nullable<bool> value);
     partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
+    partial void OnstatusChanging(System.Nullable<byte> value);
     partial void OnstatusChanged();
     #endregion
 		
@@ -1181,8 +1181,8 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
 		{
 			get
 			{
@@ -1197,1914 +1197,6 @@ namespace BVPS.DB.DBContext
 					this._status = value;
 					this.SendPropertyChanged("status");
 					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_benhtinhduc")]
-	public partial class dtb_ovule_benhtinhduc : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private string _lau;
-		
-		private string _giang_mai;
-		
-		private string _chlamydia;
-		
-		private string _benh_khac;
-		
-		private string _ghi_chu;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-		private System.Nullable<bool> _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void OnlauChanging(string value);
-    partial void OnlauChanged();
-    partial void Ongiang_maiChanging(string value);
-    partial void Ongiang_maiChanged();
-    partial void OnchlamydiaChanging(string value);
-    partial void OnchlamydiaChanged();
-    partial void Onbenh_khacChanging(string value);
-    partial void Onbenh_khacChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public dtb_ovule_benhtinhduc()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lau", DbType="NVarChar(100)")]
-		public string lau
-		{
-			get
-			{
-				return this._lau;
-			}
-			set
-			{
-				if ((this._lau != value))
-				{
-					this.OnlauChanging(value);
-					this.SendPropertyChanging();
-					this._lau = value;
-					this.SendPropertyChanged("lau");
-					this.OnlauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giang_mai", DbType="NVarChar(100)")]
-		public string giang_mai
-		{
-			get
-			{
-				return this._giang_mai;
-			}
-			set
-			{
-				if ((this._giang_mai != value))
-				{
-					this.Ongiang_maiChanging(value);
-					this.SendPropertyChanging();
-					this._giang_mai = value;
-					this.SendPropertyChanged("giang_mai");
-					this.Ongiang_maiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chlamydia", DbType="NVarChar(100)")]
-		public string chlamydia
-		{
-			get
-			{
-				return this._chlamydia;
-			}
-			set
-			{
-				if ((this._chlamydia != value))
-				{
-					this.OnchlamydiaChanging(value);
-					this.SendPropertyChanging();
-					this._chlamydia = value;
-					this.SendPropertyChanged("chlamydia");
-					this.OnchlamydiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_benh_khac", DbType="NVarChar(100)")]
-		public string benh_khac
-		{
-			get
-			{
-				return this._benh_khac;
-			}
-			set
-			{
-				if ((this._benh_khac != value))
-				{
-					this.Onbenh_khacChanging(value);
-					this.SendPropertyChanging();
-					this._benh_khac = value;
-					this.SendPropertyChanged("benh_khac");
-					this.Onbenh_khacChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
-		public string ghi_chu
-		{
-			get
-			{
-				return this._ghi_chu;
-			}
-			set
-			{
-				if ((this._ghi_chu != value))
-				{
-					this.Onghi_chuChanging(value);
-					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_tiensusinhsan")]
-	public partial class dtb_ovule_tiensusinhsan : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private System.Nullable<int> _so_lan_co_thai;
-		
-		private System.Nullable<int> _so_luong_de_con_song;
-		
-		private System.Nullable<int> _nao_hut;
-		
-		private System.Nullable<int> _thai_luu;
-		
-		private System.Nullable<int> _chua_ngoai_da_con;
-		
-		private string _chua_trung;
-		
-		private string _ghi_chu;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-		private System.Nullable<bool> _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void Onso_lan_co_thaiChanging(System.Nullable<int> value);
-    partial void Onso_lan_co_thaiChanged();
-    partial void Onso_luong_de_con_songChanging(System.Nullable<int> value);
-    partial void Onso_luong_de_con_songChanged();
-    partial void Onnao_hutChanging(System.Nullable<int> value);
-    partial void Onnao_hutChanged();
-    partial void Onthai_luuChanging(System.Nullable<int> value);
-    partial void Onthai_luuChanged();
-    partial void Onchua_ngoai_da_conChanging(System.Nullable<int> value);
-    partial void Onchua_ngoai_da_conChanged();
-    partial void Onchua_trungChanging(string value);
-    partial void Onchua_trungChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public dtb_ovule_tiensusinhsan()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_lan_co_thai", DbType="Int")]
-		public System.Nullable<int> so_lan_co_thai
-		{
-			get
-			{
-				return this._so_lan_co_thai;
-			}
-			set
-			{
-				if ((this._so_lan_co_thai != value))
-				{
-					this.Onso_lan_co_thaiChanging(value);
-					this.SendPropertyChanging();
-					this._so_lan_co_thai = value;
-					this.SendPropertyChanged("so_lan_co_thai");
-					this.Onso_lan_co_thaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_luong_de_con_song", DbType="Int")]
-		public System.Nullable<int> so_luong_de_con_song
-		{
-			get
-			{
-				return this._so_luong_de_con_song;
-			}
-			set
-			{
-				if ((this._so_luong_de_con_song != value))
-				{
-					this.Onso_luong_de_con_songChanging(value);
-					this.SendPropertyChanging();
-					this._so_luong_de_con_song = value;
-					this.SendPropertyChanged("so_luong_de_con_song");
-					this.Onso_luong_de_con_songChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nao_hut", DbType="Int")]
-		public System.Nullable<int> nao_hut
-		{
-			get
-			{
-				return this._nao_hut;
-			}
-			set
-			{
-				if ((this._nao_hut != value))
-				{
-					this.Onnao_hutChanging(value);
-					this.SendPropertyChanging();
-					this._nao_hut = value;
-					this.SendPropertyChanged("nao_hut");
-					this.Onnao_hutChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thai_luu", DbType="Int")]
-		public System.Nullable<int> thai_luu
-		{
-			get
-			{
-				return this._thai_luu;
-			}
-			set
-			{
-				if ((this._thai_luu != value))
-				{
-					this.Onthai_luuChanging(value);
-					this.SendPropertyChanging();
-					this._thai_luu = value;
-					this.SendPropertyChanged("thai_luu");
-					this.Onthai_luuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chua_ngoai_da_con", DbType="Int")]
-		public System.Nullable<int> chua_ngoai_da_con
-		{
-			get
-			{
-				return this._chua_ngoai_da_con;
-			}
-			set
-			{
-				if ((this._chua_ngoai_da_con != value))
-				{
-					this.Onchua_ngoai_da_conChanging(value);
-					this.SendPropertyChanging();
-					this._chua_ngoai_da_con = value;
-					this.SendPropertyChanged("chua_ngoai_da_con");
-					this.Onchua_ngoai_da_conChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chua_trung", DbType="NVarChar(100)")]
-		public string chua_trung
-		{
-			get
-			{
-				return this._chua_trung;
-			}
-			set
-			{
-				if ((this._chua_trung != value))
-				{
-					this.Onchua_trungChanging(value);
-					this.SendPropertyChanging();
-					this._chua_trung = value;
-					this.SendPropertyChanged("chua_trung");
-					this.Onchua_trungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
-		public string ghi_chu
-		{
-			get
-			{
-				return this._ghi_chu;
-			}
-			set
-			{
-				if ((this._ghi_chu != value))
-				{
-					this.Onghi_chuChanging(value);
-					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_xetnghiem")]
-	public partial class dtb_ovule_xetnghiem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private string _group_blood;
-		
-		private string _hiv;
-		
-		private string _bw;
-		
-		private string _hbsag;
-		
-		private string _antihcv;
-		
-		private System.Nullable<int> _num_of_check;
-		
-		private string _ghi_chu;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-		private System.Nullable<bool> _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void Ongroup_bloodChanging(string value);
-    partial void Ongroup_bloodChanged();
-    partial void OnhivChanging(string value);
-    partial void OnhivChanged();
-    partial void OnbwChanging(string value);
-    partial void OnbwChanged();
-    partial void OnhbsagChanging(string value);
-    partial void OnhbsagChanged();
-    partial void OnantihcvChanging(string value);
-    partial void OnantihcvChanged();
-    partial void Onnum_of_checkChanging(System.Nullable<int> value);
-    partial void Onnum_of_checkChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public dtb_ovule_xetnghiem()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_blood", DbType="NVarChar(100)")]
-		public string group_blood
-		{
-			get
-			{
-				return this._group_blood;
-			}
-			set
-			{
-				if ((this._group_blood != value))
-				{
-					this.Ongroup_bloodChanging(value);
-					this.SendPropertyChanging();
-					this._group_blood = value;
-					this.SendPropertyChanged("group_blood");
-					this.Ongroup_bloodChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hiv", DbType="NVarChar(100)")]
-		public string hiv
-		{
-			get
-			{
-				return this._hiv;
-			}
-			set
-			{
-				if ((this._hiv != value))
-				{
-					this.OnhivChanging(value);
-					this.SendPropertyChanging();
-					this._hiv = value;
-					this.SendPropertyChanged("hiv");
-					this.OnhivChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bw", DbType="NVarChar(100)")]
-		public string bw
-		{
-			get
-			{
-				return this._bw;
-			}
-			set
-			{
-				if ((this._bw != value))
-				{
-					this.OnbwChanging(value);
-					this.SendPropertyChanging();
-					this._bw = value;
-					this.SendPropertyChanged("bw");
-					this.OnbwChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hbsag", DbType="NVarChar(100)")]
-		public string hbsag
-		{
-			get
-			{
-				return this._hbsag;
-			}
-			set
-			{
-				if ((this._hbsag != value))
-				{
-					this.OnhbsagChanging(value);
-					this.SendPropertyChanging();
-					this._hbsag = value;
-					this.SendPropertyChanged("hbsag");
-					this.OnhbsagChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antihcv", DbType="NVarChar(100)")]
-		public string antihcv
-		{
-			get
-			{
-				return this._antihcv;
-			}
-			set
-			{
-				if ((this._antihcv != value))
-				{
-					this.OnantihcvChanging(value);
-					this.SendPropertyChanging();
-					this._antihcv = value;
-					this.SendPropertyChanged("antihcv");
-					this.OnantihcvChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_num_of_check", DbType="Int")]
-		public System.Nullable<int> num_of_check
-		{
-			get
-			{
-				return this._num_of_check;
-			}
-			set
-			{
-				if ((this._num_of_check != value))
-				{
-					this.Onnum_of_checkChanging(value);
-					this.SendPropertyChanging();
-					this._num_of_check = value;
-					this.SendPropertyChanged("num_of_check");
-					this.Onnum_of_checkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
-		public string ghi_chu
-		{
-			get
-			{
-				return this._ghi_chu;
-			}
-			set
-			{
-				if ((this._ghi_chu != value))
-				{
-					this.Onghi_chuChanging(value);
-					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_relation")]
-	public partial class dtb_ovule_relation : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private string _fullname;
-		
-		private System.Nullable<System.DateTime> _date_of_birth;
-		
-		private string _identify;
-		
-		private System.Nullable<System.DateTime> _date_of_id;
-		
-		private string _address_of_id;
-		
-		private string _address;
-		
-		private string _email;
-		
-		private string _phone;
-		
-		private string _province_code;
-		
-		private System.Nullable<int> _nation_id;
-		
-		private string _district_code;
-		
-		private string _type_of_class;
-		
-		private string _ghi_chu;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-		private System.Nullable<bool> _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void OnfullnameChanging(string value);
-    partial void OnfullnameChanged();
-    partial void Ondate_of_birthChanging(System.Nullable<System.DateTime> value);
-    partial void Ondate_of_birthChanged();
-    partial void OnidentifyChanging(string value);
-    partial void OnidentifyChanged();
-    partial void Ondate_of_idChanging(System.Nullable<System.DateTime> value);
-    partial void Ondate_of_idChanged();
-    partial void Onaddress_of_idChanging(string value);
-    partial void Onaddress_of_idChanged();
-    partial void OnaddressChanging(string value);
-    partial void OnaddressChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void Onprovince_codeChanging(string value);
-    partial void Onprovince_codeChanged();
-    partial void Onnation_idChanging(System.Nullable<int> value);
-    partial void Onnation_idChanged();
-    partial void Ondistrict_codeChanging(string value);
-    partial void Ondistrict_codeChanged();
-    partial void Ontype_of_classChanging(string value);
-    partial void Ontype_of_classChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public dtb_ovule_relation()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullname", DbType="NVarChar(100)")]
-		public string fullname
-		{
-			get
-			{
-				return this._fullname;
-			}
-			set
-			{
-				if ((this._fullname != value))
-				{
-					this.OnfullnameChanging(value);
-					this.SendPropertyChanging();
-					this._fullname = value;
-					this.SendPropertyChanged("fullname");
-					this.OnfullnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_of_birth", DbType="Date")]
-		public System.Nullable<System.DateTime> date_of_birth
-		{
-			get
-			{
-				return this._date_of_birth;
-			}
-			set
-			{
-				if ((this._date_of_birth != value))
-				{
-					this.Ondate_of_birthChanging(value);
-					this.SendPropertyChanging();
-					this._date_of_birth = value;
-					this.SendPropertyChanged("date_of_birth");
-					this.Ondate_of_birthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_identify", DbType="VarChar(100)")]
-		public string identify
-		{
-			get
-			{
-				return this._identify;
-			}
-			set
-			{
-				if ((this._identify != value))
-				{
-					this.OnidentifyChanging(value);
-					this.SendPropertyChanging();
-					this._identify = value;
-					this.SendPropertyChanged("identify");
-					this.OnidentifyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_of_id", DbType="Date")]
-		public System.Nullable<System.DateTime> date_of_id
-		{
-			get
-			{
-				return this._date_of_id;
-			}
-			set
-			{
-				if ((this._date_of_id != value))
-				{
-					this.Ondate_of_idChanging(value);
-					this.SendPropertyChanging();
-					this._date_of_id = value;
-					this.SendPropertyChanged("date_of_id");
-					this.Ondate_of_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address_of_id", DbType="NVarChar(100)")]
-		public string address_of_id
-		{
-			get
-			{
-				return this._address_of_id;
-			}
-			set
-			{
-				if ((this._address_of_id != value))
-				{
-					this.Onaddress_of_idChanging(value);
-					this.SendPropertyChanging();
-					this._address_of_id = value;
-					this.SendPropertyChanged("address_of_id");
-					this.Onaddress_of_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
-		public string address
-		{
-			get
-			{
-				return this._address;
-			}
-			set
-			{
-				if ((this._address != value))
-				{
-					this.OnaddressChanging(value);
-					this.SendPropertyChanging();
-					this._address = value;
-					this.SendPropertyChanged("address");
-					this.OnaddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(100)")]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="NVarChar(100)")]
-		public string phone
-		{
-			get
-			{
-				return this._phone;
-			}
-			set
-			{
-				if ((this._phone != value))
-				{
-					this.OnphoneChanging(value);
-					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="NVarChar(100)")]
-		public string province_code
-		{
-			get
-			{
-				return this._province_code;
-			}
-			set
-			{
-				if ((this._province_code != value))
-				{
-					this.Onprovince_codeChanging(value);
-					this.SendPropertyChanging();
-					this._province_code = value;
-					this.SendPropertyChanged("province_code");
-					this.Onprovince_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nation_id", DbType="Int")]
-		public System.Nullable<int> nation_id
-		{
-			get
-			{
-				return this._nation_id;
-			}
-			set
-			{
-				if ((this._nation_id != value))
-				{
-					this.Onnation_idChanging(value);
-					this.SendPropertyChanging();
-					this._nation_id = value;
-					this.SendPropertyChanged("nation_id");
-					this.Onnation_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_code", DbType="NVarChar(100)")]
-		public string district_code
-		{
-			get
-			{
-				return this._district_code;
-			}
-			set
-			{
-				if ((this._district_code != value))
-				{
-					this.Ondistrict_codeChanging(value);
-					this.SendPropertyChanging();
-					this._district_code = value;
-					this.SendPropertyChanged("district_code");
-					this.Ondistrict_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type_of_class", DbType="NVarChar(100)")]
-		public string type_of_class
-		{
-			get
-			{
-				return this._type_of_class;
-			}
-			set
-			{
-				if ((this._type_of_class != value))
-				{
-					this.Ontype_of_classChanging(value);
-					this.SendPropertyChanging();
-					this._type_of_class = value;
-					this.SendPropertyChanged("type_of_class");
-					this.Ontype_of_classChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
-		public string ghi_chu
-		{
-			get
-			{
-				return this._ghi_chu;
-			}
-			set
-			{
-				if ((this._ghi_chu != value))
-				{
-					this.Onghi_chuChanging(value);
-					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_kinhnguyet")]
-	public partial class dtb_ovule_kinhnguyet : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private System.Nullable<int> _tuoi_co_kinh_lan_dau;
-		
-		private System.Nullable<int> _chu_ky_kinh;
-		
-		private System.Nullable<int> _so_ngay_co_kinh;
-		
-		private string _so_luong;
-		
-		private string _ghi_chu;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-		private System.Nullable<bool> _status;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void Ontuoi_co_kinh_lan_dauChanging(System.Nullable<int> value);
-    partial void Ontuoi_co_kinh_lan_dauChanged();
-    partial void Onchu_ky_kinhChanging(System.Nullable<int> value);
-    partial void Onchu_ky_kinhChanged();
-    partial void Onso_ngay_co_kinhChanging(System.Nullable<int> value);
-    partial void Onso_ngay_co_kinhChanged();
-    partial void Onso_luongChanging(string value);
-    partial void Onso_luongChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public dtb_ovule_kinhnguyet()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tuoi_co_kinh_lan_dau", DbType="Int")]
-		public System.Nullable<int> tuoi_co_kinh_lan_dau
-		{
-			get
-			{
-				return this._tuoi_co_kinh_lan_dau;
-			}
-			set
-			{
-				if ((this._tuoi_co_kinh_lan_dau != value))
-				{
-					this.Ontuoi_co_kinh_lan_dauChanging(value);
-					this.SendPropertyChanging();
-					this._tuoi_co_kinh_lan_dau = value;
-					this.SendPropertyChanged("tuoi_co_kinh_lan_dau");
-					this.Ontuoi_co_kinh_lan_dauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chu_ky_kinh", DbType="Int")]
-		public System.Nullable<int> chu_ky_kinh
-		{
-			get
-			{
-				return this._chu_ky_kinh;
-			}
-			set
-			{
-				if ((this._chu_ky_kinh != value))
-				{
-					this.Onchu_ky_kinhChanging(value);
-					this.SendPropertyChanging();
-					this._chu_ky_kinh = value;
-					this.SendPropertyChanged("chu_ky_kinh");
-					this.Onchu_ky_kinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_ngay_co_kinh", DbType="Int")]
-		public System.Nullable<int> so_ngay_co_kinh
-		{
-			get
-			{
-				return this._so_ngay_co_kinh;
-			}
-			set
-			{
-				if ((this._so_ngay_co_kinh != value))
-				{
-					this.Onso_ngay_co_kinhChanging(value);
-					this.SendPropertyChanging();
-					this._so_ngay_co_kinh = value;
-					this.SendPropertyChanged("so_ngay_co_kinh");
-					this.Onso_ngay_co_kinhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_luong", DbType="NVarChar(100)")]
-		public string so_luong
-		{
-			get
-			{
-				return this._so_luong;
-			}
-			set
-			{
-				if ((this._so_luong != value))
-				{
-					this.Onso_luongChanging(value);
-					this.SendPropertyChanging();
-					this._so_luong = value;
-					this.SendPropertyChanged("so_luong");
-					this.Onso_luongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
-		public string ghi_chu
-		{
-			get
-			{
-				return this._ghi_chu;
-			}
-			set
-			{
-				if ((this._ghi_chu != value))
-				{
-					this.Onghi_chuChanging(value);
-					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_hoibenh")]
-	public partial class dtb_ovule_hoibenh : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _patient_code;
-		
-		private string _detail_data_tiensunoikhoa;
-		
-		private System.Nullable<bool> _have_data_tiensunoikhoa;
-		
-		private string _detail_data_tiensungoaikhoa;
-		
-		private System.Nullable<bool> _have_data_tiensungoaikhoa;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private System.Nullable<bool> _flag_need_sync;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpatient_codeChanging(string value);
-    partial void Onpatient_codeChanged();
-    partial void Ondetail_data_tiensunoikhoaChanging(string value);
-    partial void Ondetail_data_tiensunoikhoaChanged();
-    partial void Onhave_data_tiensunoikhoaChanging(System.Nullable<bool> value);
-    partial void Onhave_data_tiensunoikhoaChanged();
-    partial void Ondetail_data_tiensungoaikhoaChanging(string value);
-    partial void Ondetail_data_tiensungoaikhoaChanged();
-    partial void Onhave_data_tiensungoaikhoaChanging(System.Nullable<bool> value);
-    partial void Onhave_data_tiensungoaikhoaChanged();
-    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_dateChanged();
-    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
-    partial void Onflag_need_syncChanged();
-    #endregion
-		
-		public dtb_ovule_hoibenh()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
-		public string patient_code
-		{
-			get
-			{
-				return this._patient_code;
-			}
-			set
-			{
-				if ((this._patient_code != value))
-				{
-					this.Onpatient_codeChanging(value);
-					this.SendPropertyChanging();
-					this._patient_code = value;
-					this.SendPropertyChanged("patient_code");
-					this.Onpatient_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_data_tiensunoikhoa", DbType="NVarChar(1000)")]
-		public string detail_data_tiensunoikhoa
-		{
-			get
-			{
-				return this._detail_data_tiensunoikhoa;
-			}
-			set
-			{
-				if ((this._detail_data_tiensunoikhoa != value))
-				{
-					this.Ondetail_data_tiensunoikhoaChanging(value);
-					this.SendPropertyChanging();
-					this._detail_data_tiensunoikhoa = value;
-					this.SendPropertyChanged("detail_data_tiensunoikhoa");
-					this.Ondetail_data_tiensunoikhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_have_data_tiensunoikhoa", DbType="Bit")]
-		public System.Nullable<bool> have_data_tiensunoikhoa
-		{
-			get
-			{
-				return this._have_data_tiensunoikhoa;
-			}
-			set
-			{
-				if ((this._have_data_tiensunoikhoa != value))
-				{
-					this.Onhave_data_tiensunoikhoaChanging(value);
-					this.SendPropertyChanging();
-					this._have_data_tiensunoikhoa = value;
-					this.SendPropertyChanged("have_data_tiensunoikhoa");
-					this.Onhave_data_tiensunoikhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_data_tiensungoaikhoa", DbType="NVarChar(1000)")]
-		public string detail_data_tiensungoaikhoa
-		{
-			get
-			{
-				return this._detail_data_tiensungoaikhoa;
-			}
-			set
-			{
-				if ((this._detail_data_tiensungoaikhoa != value))
-				{
-					this.Ondetail_data_tiensungoaikhoaChanging(value);
-					this.SendPropertyChanging();
-					this._detail_data_tiensungoaikhoa = value;
-					this.SendPropertyChanged("detail_data_tiensungoaikhoa");
-					this.Ondetail_data_tiensungoaikhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_have_data_tiensungoaikhoa", DbType="Bit")]
-		public System.Nullable<bool> have_data_tiensungoaikhoa
-		{
-			get
-			{
-				return this._have_data_tiensungoaikhoa;
-			}
-			set
-			{
-				if ((this._have_data_tiensungoaikhoa != value))
-				{
-					this.Onhave_data_tiensungoaikhoaChanging(value);
-					this.SendPropertyChanging();
-					this._have_data_tiensungoaikhoa = value;
-					this.SendPropertyChanged("have_data_tiensungoaikhoa");
-					this.Onhave_data_tiensungoaikhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this.Oncreated_dateChanging(value);
-					this.SendPropertyChanging();
-					this._created_date = value;
-					this.SendPropertyChanged("created_date");
-					this.Oncreated_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
-		public System.Nullable<bool> flag_need_sync
-		{
-			get
-			{
-				return this._flag_need_sync;
-			}
-			set
-			{
-				if ((this._flag_need_sync != value))
-				{
-					this.Onflag_need_syncChanging(value);
-					this.SendPropertyChanging();
-					this._flag_need_sync = value;
-					this.SendPropertyChanged("flag_need_sync");
-					this.Onflag_need_syncChanged();
 				}
 			}
 		}
@@ -3172,7 +1264,7 @@ namespace BVPS.DB.DBContext
 		
 		private System.Nullable<bool> _flag_need_sync;
 		
-		private System.Nullable<bool> _status;
+		private System.Nullable<byte> _status;
 		
 		private string _height;
 		
@@ -3180,9 +1272,9 @@ namespace BVPS.DB.DBContext
 		
 		private string _huyet_ap;
 		
-		private string _nhiet_do;
-		
 		private string _mach;
+		
+		private string _nhiet_do;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3224,7 +1316,7 @@ namespace BVPS.DB.DBContext
     partial void Onghi_chuChanged();
     partial void Onflag_need_syncChanging(System.Nullable<bool> value);
     partial void Onflag_need_syncChanged();
-    partial void OnstatusChanging(System.Nullable<bool> value);
+    partial void OnstatusChanging(System.Nullable<byte> value);
     partial void OnstatusChanged();
     partial void OnheightChanging(string value);
     partial void OnheightChanged();
@@ -3232,10 +1324,10 @@ namespace BVPS.DB.DBContext
     partial void OnweightChanged();
     partial void Onhuyet_apChanging(string value);
     partial void Onhuyet_apChanged();
-    partial void Onnhiet_doChanging(string value);
-    partial void Onnhiet_doChanged();
     partial void OnmachChanging(string value);
     partial void OnmachChanged();
+    partial void Onnhiet_doChanging(string value);
+    partial void Onnhiet_doChanged();
     #endregion
 		
 		public dtb_ovule_khambenh()
@@ -3603,8 +1695,8 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit")]
-		public System.Nullable<bool> status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
 		{
 			get
 			{
@@ -3683,6 +1775,26 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mach", DbType="NVarChar(100)")]
+		public string mach
+		{
+			get
+			{
+				return this._mach;
+			}
+			set
+			{
+				if ((this._mach != value))
+				{
+					this.OnmachChanging(value);
+					this.SendPropertyChanging();
+					this._mach = value;
+					this.SendPropertyChanged("mach");
+					this.OnmachChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nhiet_do", DbType="NVarChar(100)")]
 		public string nhiet_do
 		{
@@ -3703,22 +1815,1934 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mach", DbType="NVarChar(100)")]
-		public string mach
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_benhtinhduc")]
+	public partial class dtb_ovule_benhtinhduc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private string _lau;
+		
+		private string _giang_mai;
+		
+		private string _chlamydia;
+		
+		private string _benh_khac;
+		
+		private string _ghi_chu;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void OnlauChanging(string value);
+    partial void OnlauChanged();
+    partial void Ongiang_maiChanging(string value);
+    partial void Ongiang_maiChanged();
+    partial void OnchlamydiaChanging(string value);
+    partial void OnchlamydiaChanged();
+    partial void Onbenh_khacChanging(string value);
+    partial void Onbenh_khacChanged();
+    partial void Onghi_chuChanging(string value);
+    partial void Onghi_chuChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_benhtinhduc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this._mach;
+				return this._id;
 			}
 			set
 			{
-				if ((this._mach != value))
+				if ((this._id != value))
 				{
-					this.OnmachChanging(value);
+					this.OnidChanging(value);
 					this.SendPropertyChanging();
-					this._mach = value;
-					this.SendPropertyChanged("mach");
-					this.OnmachChanged();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lau", DbType="NVarChar(100)")]
+		public string lau
+		{
+			get
+			{
+				return this._lau;
+			}
+			set
+			{
+				if ((this._lau != value))
+				{
+					this.OnlauChanging(value);
+					this.SendPropertyChanging();
+					this._lau = value;
+					this.SendPropertyChanged("lau");
+					this.OnlauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giang_mai", DbType="NVarChar(100)")]
+		public string giang_mai
+		{
+			get
+			{
+				return this._giang_mai;
+			}
+			set
+			{
+				if ((this._giang_mai != value))
+				{
+					this.Ongiang_maiChanging(value);
+					this.SendPropertyChanging();
+					this._giang_mai = value;
+					this.SendPropertyChanged("giang_mai");
+					this.Ongiang_maiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chlamydia", DbType="NVarChar(100)")]
+		public string chlamydia
+		{
+			get
+			{
+				return this._chlamydia;
+			}
+			set
+			{
+				if ((this._chlamydia != value))
+				{
+					this.OnchlamydiaChanging(value);
+					this.SendPropertyChanging();
+					this._chlamydia = value;
+					this.SendPropertyChanged("chlamydia");
+					this.OnchlamydiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_benh_khac", DbType="NVarChar(100)")]
+		public string benh_khac
+		{
+			get
+			{
+				return this._benh_khac;
+			}
+			set
+			{
+				if ((this._benh_khac != value))
+				{
+					this.Onbenh_khacChanging(value);
+					this.SendPropertyChanging();
+					this._benh_khac = value;
+					this.SendPropertyChanged("benh_khac");
+					this.Onbenh_khacChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
+		public string ghi_chu
+		{
+			get
+			{
+				return this._ghi_chu;
+			}
+			set
+			{
+				if ((this._ghi_chu != value))
+				{
+					this.Onghi_chuChanging(value);
+					this.SendPropertyChanging();
+					this._ghi_chu = value;
+					this.SendPropertyChanged("ghi_chu");
+					this.Onghi_chuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_hoibenh")]
+	public partial class dtb_ovule_hoibenh : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private string _detail_data_tiensunoikhoa;
+		
+		private System.Nullable<bool> _have_data_tiensunoikhoa;
+		
+		private string _detail_data_tiensungoaikhoa;
+		
+		private System.Nullable<bool> _have_data_tiensungoaikhoa;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void Ondetail_data_tiensunoikhoaChanging(string value);
+    partial void Ondetail_data_tiensunoikhoaChanged();
+    partial void Onhave_data_tiensunoikhoaChanging(System.Nullable<bool> value);
+    partial void Onhave_data_tiensunoikhoaChanged();
+    partial void Ondetail_data_tiensungoaikhoaChanging(string value);
+    partial void Ondetail_data_tiensungoaikhoaChanged();
+    partial void Onhave_data_tiensungoaikhoaChanging(System.Nullable<bool> value);
+    partial void Onhave_data_tiensungoaikhoaChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_hoibenh()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_data_tiensunoikhoa", DbType="NVarChar(1000)")]
+		public string detail_data_tiensunoikhoa
+		{
+			get
+			{
+				return this._detail_data_tiensunoikhoa;
+			}
+			set
+			{
+				if ((this._detail_data_tiensunoikhoa != value))
+				{
+					this.Ondetail_data_tiensunoikhoaChanging(value);
+					this.SendPropertyChanging();
+					this._detail_data_tiensunoikhoa = value;
+					this.SendPropertyChanged("detail_data_tiensunoikhoa");
+					this.Ondetail_data_tiensunoikhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_have_data_tiensunoikhoa", DbType="Bit")]
+		public System.Nullable<bool> have_data_tiensunoikhoa
+		{
+			get
+			{
+				return this._have_data_tiensunoikhoa;
+			}
+			set
+			{
+				if ((this._have_data_tiensunoikhoa != value))
+				{
+					this.Onhave_data_tiensunoikhoaChanging(value);
+					this.SendPropertyChanging();
+					this._have_data_tiensunoikhoa = value;
+					this.SendPropertyChanged("have_data_tiensunoikhoa");
+					this.Onhave_data_tiensunoikhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_data_tiensungoaikhoa", DbType="NVarChar(1000)")]
+		public string detail_data_tiensungoaikhoa
+		{
+			get
+			{
+				return this._detail_data_tiensungoaikhoa;
+			}
+			set
+			{
+				if ((this._detail_data_tiensungoaikhoa != value))
+				{
+					this.Ondetail_data_tiensungoaikhoaChanging(value);
+					this.SendPropertyChanging();
+					this._detail_data_tiensungoaikhoa = value;
+					this.SendPropertyChanged("detail_data_tiensungoaikhoa");
+					this.Ondetail_data_tiensungoaikhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_have_data_tiensungoaikhoa", DbType="Bit")]
+		public System.Nullable<bool> have_data_tiensungoaikhoa
+		{
+			get
+			{
+				return this._have_data_tiensungoaikhoa;
+			}
+			set
+			{
+				if ((this._have_data_tiensungoaikhoa != value))
+				{
+					this.Onhave_data_tiensungoaikhoaChanging(value);
+					this.SendPropertyChanging();
+					this._have_data_tiensungoaikhoa = value;
+					this.SendPropertyChanged("have_data_tiensungoaikhoa");
+					this.Onhave_data_tiensungoaikhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_tiensusinhsan")]
+	public partial class dtb_ovule_tiensusinhsan : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private System.Nullable<int> _so_lan_co_thai;
+		
+		private System.Nullable<int> _so_luong_de_con_song;
+		
+		private System.Nullable<int> _nao_hut;
+		
+		private System.Nullable<int> _thai_luu;
+		
+		private System.Nullable<int> _chua_ngoai_da_con;
+		
+		private string _chua_trung;
+		
+		private string _ghi_chu;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void Onso_lan_co_thaiChanging(System.Nullable<int> value);
+    partial void Onso_lan_co_thaiChanged();
+    partial void Onso_luong_de_con_songChanging(System.Nullable<int> value);
+    partial void Onso_luong_de_con_songChanged();
+    partial void Onnao_hutChanging(System.Nullable<int> value);
+    partial void Onnao_hutChanged();
+    partial void Onthai_luuChanging(System.Nullable<int> value);
+    partial void Onthai_luuChanged();
+    partial void Onchua_ngoai_da_conChanging(System.Nullable<int> value);
+    partial void Onchua_ngoai_da_conChanged();
+    partial void Onchua_trungChanging(string value);
+    partial void Onchua_trungChanged();
+    partial void Onghi_chuChanging(string value);
+    partial void Onghi_chuChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_tiensusinhsan()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_lan_co_thai", DbType="Int")]
+		public System.Nullable<int> so_lan_co_thai
+		{
+			get
+			{
+				return this._so_lan_co_thai;
+			}
+			set
+			{
+				if ((this._so_lan_co_thai != value))
+				{
+					this.Onso_lan_co_thaiChanging(value);
+					this.SendPropertyChanging();
+					this._so_lan_co_thai = value;
+					this.SendPropertyChanged("so_lan_co_thai");
+					this.Onso_lan_co_thaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_luong_de_con_song", DbType="Int")]
+		public System.Nullable<int> so_luong_de_con_song
+		{
+			get
+			{
+				return this._so_luong_de_con_song;
+			}
+			set
+			{
+				if ((this._so_luong_de_con_song != value))
+				{
+					this.Onso_luong_de_con_songChanging(value);
+					this.SendPropertyChanging();
+					this._so_luong_de_con_song = value;
+					this.SendPropertyChanged("so_luong_de_con_song");
+					this.Onso_luong_de_con_songChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nao_hut", DbType="Int")]
+		public System.Nullable<int> nao_hut
+		{
+			get
+			{
+				return this._nao_hut;
+			}
+			set
+			{
+				if ((this._nao_hut != value))
+				{
+					this.Onnao_hutChanging(value);
+					this.SendPropertyChanging();
+					this._nao_hut = value;
+					this.SendPropertyChanged("nao_hut");
+					this.Onnao_hutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thai_luu", DbType="Int")]
+		public System.Nullable<int> thai_luu
+		{
+			get
+			{
+				return this._thai_luu;
+			}
+			set
+			{
+				if ((this._thai_luu != value))
+				{
+					this.Onthai_luuChanging(value);
+					this.SendPropertyChanging();
+					this._thai_luu = value;
+					this.SendPropertyChanged("thai_luu");
+					this.Onthai_luuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chua_ngoai_da_con", DbType="Int")]
+		public System.Nullable<int> chua_ngoai_da_con
+		{
+			get
+			{
+				return this._chua_ngoai_da_con;
+			}
+			set
+			{
+				if ((this._chua_ngoai_da_con != value))
+				{
+					this.Onchua_ngoai_da_conChanging(value);
+					this.SendPropertyChanging();
+					this._chua_ngoai_da_con = value;
+					this.SendPropertyChanged("chua_ngoai_da_con");
+					this.Onchua_ngoai_da_conChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chua_trung", DbType="NVarChar(100)")]
+		public string chua_trung
+		{
+			get
+			{
+				return this._chua_trung;
+			}
+			set
+			{
+				if ((this._chua_trung != value))
+				{
+					this.Onchua_trungChanging(value);
+					this.SendPropertyChanging();
+					this._chua_trung = value;
+					this.SendPropertyChanged("chua_trung");
+					this.Onchua_trungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
+		public string ghi_chu
+		{
+			get
+			{
+				return this._ghi_chu;
+			}
+			set
+			{
+				if ((this._ghi_chu != value))
+				{
+					this.Onghi_chuChanging(value);
+					this.SendPropertyChanging();
+					this._ghi_chu = value;
+					this.SendPropertyChanged("ghi_chu");
+					this.Onghi_chuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_xetnghiem")]
+	public partial class dtb_ovule_xetnghiem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private string _group_blood;
+		
+		private string _hiv;
+		
+		private string _bw;
+		
+		private string _hbsag;
+		
+		private string _antihcv;
+		
+		private System.Nullable<int> _num_of_check;
+		
+		private string _ghi_chu;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void Ongroup_bloodChanging(string value);
+    partial void Ongroup_bloodChanged();
+    partial void OnhivChanging(string value);
+    partial void OnhivChanged();
+    partial void OnbwChanging(string value);
+    partial void OnbwChanged();
+    partial void OnhbsagChanging(string value);
+    partial void OnhbsagChanged();
+    partial void OnantihcvChanging(string value);
+    partial void OnantihcvChanged();
+    partial void Onnum_of_checkChanging(System.Nullable<int> value);
+    partial void Onnum_of_checkChanged();
+    partial void Onghi_chuChanging(string value);
+    partial void Onghi_chuChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_xetnghiem()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_blood", DbType="NVarChar(100)")]
+		public string group_blood
+		{
+			get
+			{
+				return this._group_blood;
+			}
+			set
+			{
+				if ((this._group_blood != value))
+				{
+					this.Ongroup_bloodChanging(value);
+					this.SendPropertyChanging();
+					this._group_blood = value;
+					this.SendPropertyChanged("group_blood");
+					this.Ongroup_bloodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hiv", DbType="NVarChar(100)")]
+		public string hiv
+		{
+			get
+			{
+				return this._hiv;
+			}
+			set
+			{
+				if ((this._hiv != value))
+				{
+					this.OnhivChanging(value);
+					this.SendPropertyChanging();
+					this._hiv = value;
+					this.SendPropertyChanged("hiv");
+					this.OnhivChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bw", DbType="NVarChar(100)")]
+		public string bw
+		{
+			get
+			{
+				return this._bw;
+			}
+			set
+			{
+				if ((this._bw != value))
+				{
+					this.OnbwChanging(value);
+					this.SendPropertyChanging();
+					this._bw = value;
+					this.SendPropertyChanged("bw");
+					this.OnbwChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hbsag", DbType="NVarChar(100)")]
+		public string hbsag
+		{
+			get
+			{
+				return this._hbsag;
+			}
+			set
+			{
+				if ((this._hbsag != value))
+				{
+					this.OnhbsagChanging(value);
+					this.SendPropertyChanging();
+					this._hbsag = value;
+					this.SendPropertyChanged("hbsag");
+					this.OnhbsagChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antihcv", DbType="NVarChar(100)")]
+		public string antihcv
+		{
+			get
+			{
+				return this._antihcv;
+			}
+			set
+			{
+				if ((this._antihcv != value))
+				{
+					this.OnantihcvChanging(value);
+					this.SendPropertyChanging();
+					this._antihcv = value;
+					this.SendPropertyChanged("antihcv");
+					this.OnantihcvChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_num_of_check", DbType="Int")]
+		public System.Nullable<int> num_of_check
+		{
+			get
+			{
+				return this._num_of_check;
+			}
+			set
+			{
+				if ((this._num_of_check != value))
+				{
+					this.Onnum_of_checkChanging(value);
+					this.SendPropertyChanging();
+					this._num_of_check = value;
+					this.SendPropertyChanged("num_of_check");
+					this.Onnum_of_checkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
+		public string ghi_chu
+		{
+			get
+			{
+				return this._ghi_chu;
+			}
+			set
+			{
+				if ((this._ghi_chu != value))
+				{
+					this.Onghi_chuChanging(value);
+					this.SendPropertyChanging();
+					this._ghi_chu = value;
+					this.SendPropertyChanged("ghi_chu");
+					this.Onghi_chuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_relation")]
+	public partial class dtb_ovule_relation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private string _fullname;
+		
+		private System.Nullable<System.DateTime> _date_of_birth;
+		
+		private string _identify;
+		
+		private System.Nullable<System.DateTime> _date_of_id;
+		
+		private string _address_of_id;
+		
+		private string _address;
+		
+		private string _email;
+		
+		private string _phone;
+		
+		private string _province_code;
+		
+		private System.Nullable<int> _nation_id;
+		
+		private string _district_code;
+		
+		private string _type_of_class;
+		
+		private string _ghi_chu;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void OnfullnameChanging(string value);
+    partial void OnfullnameChanged();
+    partial void Ondate_of_birthChanging(System.Nullable<System.DateTime> value);
+    partial void Ondate_of_birthChanged();
+    partial void OnidentifyChanging(string value);
+    partial void OnidentifyChanged();
+    partial void Ondate_of_idChanging(System.Nullable<System.DateTime> value);
+    partial void Ondate_of_idChanged();
+    partial void Onaddress_of_idChanging(string value);
+    partial void Onaddress_of_idChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void Onprovince_codeChanging(string value);
+    partial void Onprovince_codeChanged();
+    partial void Onnation_idChanging(System.Nullable<int> value);
+    partial void Onnation_idChanged();
+    partial void Ondistrict_codeChanging(string value);
+    partial void Ondistrict_codeChanged();
+    partial void Ontype_of_classChanging(string value);
+    partial void Ontype_of_classChanged();
+    partial void Onghi_chuChanging(string value);
+    partial void Onghi_chuChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_relation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fullname", DbType="NVarChar(100)")]
+		public string fullname
+		{
+			get
+			{
+				return this._fullname;
+			}
+			set
+			{
+				if ((this._fullname != value))
+				{
+					this.OnfullnameChanging(value);
+					this.SendPropertyChanging();
+					this._fullname = value;
+					this.SendPropertyChanged("fullname");
+					this.OnfullnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_of_birth", DbType="Date")]
+		public System.Nullable<System.DateTime> date_of_birth
+		{
+			get
+			{
+				return this._date_of_birth;
+			}
+			set
+			{
+				if ((this._date_of_birth != value))
+				{
+					this.Ondate_of_birthChanging(value);
+					this.SendPropertyChanging();
+					this._date_of_birth = value;
+					this.SendPropertyChanged("date_of_birth");
+					this.Ondate_of_birthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_identify", DbType="VarChar(100)")]
+		public string identify
+		{
+			get
+			{
+				return this._identify;
+			}
+			set
+			{
+				if ((this._identify != value))
+				{
+					this.OnidentifyChanging(value);
+					this.SendPropertyChanging();
+					this._identify = value;
+					this.SendPropertyChanged("identify");
+					this.OnidentifyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_of_id", DbType="Date")]
+		public System.Nullable<System.DateTime> date_of_id
+		{
+			get
+			{
+				return this._date_of_id;
+			}
+			set
+			{
+				if ((this._date_of_id != value))
+				{
+					this.Ondate_of_idChanging(value);
+					this.SendPropertyChanging();
+					this._date_of_id = value;
+					this.SendPropertyChanged("date_of_id");
+					this.Ondate_of_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address_of_id", DbType="NVarChar(100)")]
+		public string address_of_id
+		{
+			get
+			{
+				return this._address_of_id;
+			}
+			set
+			{
+				if ((this._address_of_id != value))
+				{
+					this.Onaddress_of_idChanging(value);
+					this.SendPropertyChanging();
+					this._address_of_id = value;
+					this.SendPropertyChanged("address_of_id");
+					this.Onaddress_of_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(100)")]
+		public string address
+		{
+			get
+			{
+				return this._address;
+			}
+			set
+			{
+				if ((this._address != value))
+				{
+					this.OnaddressChanging(value);
+					this.SendPropertyChanging();
+					this._address = value;
+					this.SendPropertyChanged("address");
+					this.OnaddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(100)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="NVarChar(100)")]
+		public string phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="NVarChar(100)")]
+		public string province_code
+		{
+			get
+			{
+				return this._province_code;
+			}
+			set
+			{
+				if ((this._province_code != value))
+				{
+					this.Onprovince_codeChanging(value);
+					this.SendPropertyChanging();
+					this._province_code = value;
+					this.SendPropertyChanged("province_code");
+					this.Onprovince_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nation_id", DbType="Int")]
+		public System.Nullable<int> nation_id
+		{
+			get
+			{
+				return this._nation_id;
+			}
+			set
+			{
+				if ((this._nation_id != value))
+				{
+					this.Onnation_idChanging(value);
+					this.SendPropertyChanging();
+					this._nation_id = value;
+					this.SendPropertyChanged("nation_id");
+					this.Onnation_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_code", DbType="NVarChar(100)")]
+		public string district_code
+		{
+			get
+			{
+				return this._district_code;
+			}
+			set
+			{
+				if ((this._district_code != value))
+				{
+					this.Ondistrict_codeChanging(value);
+					this.SendPropertyChanging();
+					this._district_code = value;
+					this.SendPropertyChanged("district_code");
+					this.Ondistrict_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type_of_class", DbType="NVarChar(100)")]
+		public string type_of_class
+		{
+			get
+			{
+				return this._type_of_class;
+			}
+			set
+			{
+				if ((this._type_of_class != value))
+				{
+					this.Ontype_of_classChanging(value);
+					this.SendPropertyChanging();
+					this._type_of_class = value;
+					this.SendPropertyChanged("type_of_class");
+					this.Ontype_of_classChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
+		public string ghi_chu
+		{
+			get
+			{
+				return this._ghi_chu;
+			}
+			set
+			{
+				if ((this._ghi_chu != value))
+				{
+					this.Onghi_chuChanging(value);
+					this.SendPropertyChanging();
+					this._ghi_chu = value;
+					this.SendPropertyChanged("ghi_chu");
+					this.Onghi_chuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_ovule_kinhnguyet")]
+	public partial class dtb_ovule_kinhnguyet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _patient_code;
+		
+		private System.Nullable<System.DateTime> _created_date;
+		
+		private System.Nullable<int> _tuoi_co_kinh_lan_dau;
+		
+		private System.Nullable<int> _chu_ky_kinh;
+		
+		private System.Nullable<int> _so_ngay_co_kinh;
+		
+		private string _so_luong;
+		
+		private string _ghi_chu;
+		
+		private System.Nullable<bool> _flag_need_sync;
+		
+		private System.Nullable<byte> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onpatient_codeChanging(string value);
+    partial void Onpatient_codeChanged();
+    partial void Oncreated_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_dateChanged();
+    partial void Ontuoi_co_kinh_lan_dauChanging(System.Nullable<int> value);
+    partial void Ontuoi_co_kinh_lan_dauChanged();
+    partial void Onchu_ky_kinhChanging(System.Nullable<int> value);
+    partial void Onchu_ky_kinhChanged();
+    partial void Onso_ngay_co_kinhChanging(System.Nullable<int> value);
+    partial void Onso_ngay_co_kinhChanged();
+    partial void Onso_luongChanging(string value);
+    partial void Onso_luongChanged();
+    partial void Onghi_chuChanging(string value);
+    partial void Onghi_chuChanged();
+    partial void Onflag_need_syncChanging(System.Nullable<bool> value);
+    partial void Onflag_need_syncChanged();
+    partial void OnstatusChanging(System.Nullable<byte> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public dtb_ovule_kinhnguyet()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patient_code", DbType="VarChar(100)")]
+		public string patient_code
+		{
+			get
+			{
+				return this._patient_code;
+			}
+			set
+			{
+				if ((this._patient_code != value))
+				{
+					this.Onpatient_codeChanging(value);
+					this.SendPropertyChanging();
+					this._patient_code = value;
+					this.SendPropertyChanged("patient_code");
+					this.Onpatient_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> created_date
+		{
+			get
+			{
+				return this._created_date;
+			}
+			set
+			{
+				if ((this._created_date != value))
+				{
+					this.Oncreated_dateChanging(value);
+					this.SendPropertyChanging();
+					this._created_date = value;
+					this.SendPropertyChanged("created_date");
+					this.Oncreated_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tuoi_co_kinh_lan_dau", DbType="Int")]
+		public System.Nullable<int> tuoi_co_kinh_lan_dau
+		{
+			get
+			{
+				return this._tuoi_co_kinh_lan_dau;
+			}
+			set
+			{
+				if ((this._tuoi_co_kinh_lan_dau != value))
+				{
+					this.Ontuoi_co_kinh_lan_dauChanging(value);
+					this.SendPropertyChanging();
+					this._tuoi_co_kinh_lan_dau = value;
+					this.SendPropertyChanged("tuoi_co_kinh_lan_dau");
+					this.Ontuoi_co_kinh_lan_dauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chu_ky_kinh", DbType="Int")]
+		public System.Nullable<int> chu_ky_kinh
+		{
+			get
+			{
+				return this._chu_ky_kinh;
+			}
+			set
+			{
+				if ((this._chu_ky_kinh != value))
+				{
+					this.Onchu_ky_kinhChanging(value);
+					this.SendPropertyChanging();
+					this._chu_ky_kinh = value;
+					this.SendPropertyChanged("chu_ky_kinh");
+					this.Onchu_ky_kinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_ngay_co_kinh", DbType="Int")]
+		public System.Nullable<int> so_ngay_co_kinh
+		{
+			get
+			{
+				return this._so_ngay_co_kinh;
+			}
+			set
+			{
+				if ((this._so_ngay_co_kinh != value))
+				{
+					this.Onso_ngay_co_kinhChanging(value);
+					this.SendPropertyChanging();
+					this._so_ngay_co_kinh = value;
+					this.SendPropertyChanged("so_ngay_co_kinh");
+					this.Onso_ngay_co_kinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_luong", DbType="NVarChar(100)")]
+		public string so_luong
+		{
+			get
+			{
+				return this._so_luong;
+			}
+			set
+			{
+				if ((this._so_luong != value))
+				{
+					this.Onso_luongChanging(value);
+					this.SendPropertyChanging();
+					this._so_luong = value;
+					this.SendPropertyChanged("so_luong");
+					this.Onso_luongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="NVarChar(500)")]
+		public string ghi_chu
+		{
+			get
+			{
+				return this._ghi_chu;
+			}
+			set
+			{
+				if ((this._ghi_chu != value))
+				{
+					this.Onghi_chuChanging(value);
+					this.SendPropertyChanging();
+					this._ghi_chu = value;
+					this.SendPropertyChanged("ghi_chu");
+					this.Onghi_chuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_flag_need_sync", DbType="Bit")]
+		public System.Nullable<bool> flag_need_sync
+		{
+			get
+			{
+				return this._flag_need_sync;
+			}
+			set
+			{
+				if ((this._flag_need_sync != value))
+				{
+					this.Onflag_need_syncChanging(value);
+					this.SendPropertyChanging();
+					this._flag_need_sync = value;
+					this.SendPropertyChanged("flag_need_sync");
+					this.Onflag_need_syncChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="TinyInt")]
+		public System.Nullable<byte> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}

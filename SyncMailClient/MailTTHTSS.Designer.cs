@@ -52,6 +52,7 @@
             this.txtIntervalTimer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkEnableGetDataServer = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSMTPServerPort = new System.Windows.Forms.TextBox();
-            this.chkUseGmail = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -91,7 +91,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(124, 20);
             this.txtPassword.TabIndex = 8;
-            this.txtPassword.Text = "1";
+            this.txtPassword.Text = "bvpstw123456";
             // 
             // label3
             // 
@@ -108,7 +108,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(161, 20);
             this.txtUser.TabIndex = 6;
-            this.txtUser.Text = "user1@192.168.203.31";
+            this.txtUser.Text = "bvps.client.1@gmail.com";
             // 
             // label4
             // 
@@ -133,7 +133,7 @@
             this.txtMailTo.Name = "txtMailTo";
             this.txtMailTo.Size = new System.Drawing.Size(304, 20);
             this.txtMailTo.TabIndex = 13;
-            this.txtMailTo.Text = "user2@hospital";
+            this.txtMailTo.Text = "bvps.server@gmail.com";
             // 
             // label7
             // 
@@ -297,6 +297,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cấu hình truyền thư bảo mật";
             // 
+            // chkUseGmail
+            // 
+            this.chkUseGmail.AutoSize = true;
+            this.chkUseGmail.Location = new System.Drawing.Point(18, 75);
+            this.chkUseGmail.Name = "chkUseGmail";
+            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
+            this.chkUseGmail.TabIndex = 29;
+            this.chkUseGmail.Text = "Sử dụng gmail";
+            this.chkUseGmail.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label8);
@@ -362,16 +372,6 @@
             this.txtSMTPServerPort.Size = new System.Drawing.Size(124, 20);
             this.txtSMTPServerPort.TabIndex = 3;
             this.txtSMTPServerPort.Text = "25";
-            // 
-            // chkUseGmail
-            // 
-            this.chkUseGmail.AutoSize = true;
-            this.chkUseGmail.Location = new System.Drawing.Point(18, 75);
-            this.chkUseGmail.Name = "chkUseGmail";
-            this.chkUseGmail.Size = new System.Drawing.Size(93, 17);
-            this.chkUseGmail.TabIndex = 29;
-            this.chkUseGmail.Text = "Sử dụng gmail";
-            this.chkUseGmail.UseVisualStyleBackColor = true;
             // 
             // FormTTHTSS
             // 

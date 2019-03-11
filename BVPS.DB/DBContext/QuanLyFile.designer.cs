@@ -22,7 +22,7 @@ namespace BVPS.DB.DBContext
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss1")]
 	public partial class QuanLyFileDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,16 +30,16 @@ namespace BVPS.DB.DBContext
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertdtb_patient_document(dtb_patient_document instance);
-    partial void Updatedtb_patient_document(dtb_patient_document instance);
-    partial void Deletedtb_patient_document(dtb_patient_document instance);
     partial void Insertdtb_doc_type(dtb_doc_type instance);
     partial void Updatedtb_doc_type(dtb_doc_type instance);
     partial void Deletedtb_doc_type(dtb_doc_type instance);
+    partial void Insertdtb_patient_document(dtb_patient_document instance);
+    partial void Updatedtb_patient_document(dtb_patient_document instance);
+    partial void Deletedtb_patient_document(dtb_patient_document instance);
     #endregion
 		
 		public QuanLyFileDataContext() : 
-				base(global::BVPS.DB.Properties.Settings.Default.htssConnectionString, mappingSource)
+				base(global::BVPS.DB.Properties.Settings.Default.htss1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -68,6 +68,14 @@ namespace BVPS.DB.DBContext
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<dtb_doc_type> dtb_doc_types
+		{
+			get
+			{
+				return this.GetTable<dtb_doc_type>();
+			}
+		}
+		
 		public System.Data.Linq.Table<dtb_patient_document> dtb_patient_documents
 		{
 			get
@@ -75,12 +83,138 @@ namespace BVPS.DB.DBContext
 				return this.GetTable<dtb_patient_document>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_doc_types")]
+	public partial class dtb_doc_type : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<dtb_doc_type> dtb_doc_types
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _doc_name;
+		
+		private System.Nullable<int> _doc_type;
+		
+		private System.Nullable<int> _sort;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Ondoc_nameChanging(string value);
+    partial void Ondoc_nameChanged();
+    partial void Ondoc_typeChanging(System.Nullable<int> value);
+    partial void Ondoc_typeChanged();
+    partial void OnsortChanging(System.Nullable<int> value);
+    partial void OnsortChanged();
+    #endregion
+		
+		public dtb_doc_type()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this.GetTable<dtb_doc_type>();
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doc_name", DbType="NVarChar(200)")]
+		public string doc_name
+		{
+			get
+			{
+				return this._doc_name;
+			}
+			set
+			{
+				if ((this._doc_name != value))
+				{
+					this.Ondoc_nameChanging(value);
+					this.SendPropertyChanging();
+					this._doc_name = value;
+					this.SendPropertyChanged("doc_name");
+					this.Ondoc_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doc_type", DbType="Int")]
+		public System.Nullable<int> doc_type
+		{
+			get
+			{
+				return this._doc_type;
+			}
+			set
+			{
+				if ((this._doc_type != value))
+				{
+					this.Ondoc_typeChanging(value);
+					this.SendPropertyChanging();
+					this._doc_type = value;
+					this.SendPropertyChanged("doc_type");
+					this.Ondoc_typeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sort", DbType="Int")]
+		public System.Nullable<int> sort
+		{
+			get
+			{
+				return this._sort;
+			}
+			set
+			{
+				if ((this._sort != value))
+				{
+					this.OnsortChanging(value);
+					this.SendPropertyChanging();
+					this._sort = value;
+					this.SendPropertyChanged("sort");
+					this.OnsortChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -99,6 +233,10 @@ namespace BVPS.DB.DBContext
 		
 		private string _file_name;
 		
+		private string _file_path;
+		
+		private string _file_type;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -111,6 +249,10 @@ namespace BVPS.DB.DBContext
     partial void Onpatient_codeChanged();
     partial void Onfile_nameChanging(string value);
     partial void Onfile_nameChanged();
+    partial void Onfile_pathChanging(string value);
+    partial void Onfile_pathChanged();
+    partial void Onfile_typeChanging(string value);
+    partial void Onfile_typeChanged();
     #endregion
 		
 		public dtb_patient_document()
@@ -198,112 +340,42 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_doc_types")]
-	public partial class dtb_doc_type : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _doc_name;
-		
-		private System.Nullable<int> _doc_type;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Ondoc_nameChanging(string value);
-    partial void Ondoc_nameChanged();
-    partial void Ondoc_typeChanging(System.Nullable<int> value);
-    partial void Ondoc_typeChanged();
-    #endregion
-		
-		public dtb_doc_type()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_file_path", DbType="VarChar(255)")]
+		public string file_path
 		{
 			get
 			{
-				return this._id;
+				return this._file_path;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._file_path != value))
 				{
-					this.OnidChanging(value);
+					this.Onfile_pathChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._file_path = value;
+					this.SendPropertyChanged("file_path");
+					this.Onfile_pathChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doc_name", DbType="NVarChar(200)")]
-		public string doc_name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_file_type", DbType="VarChar(255)")]
+		public string file_type
 		{
 			get
 			{
-				return this._doc_name;
+				return this._file_type;
 			}
 			set
 			{
-				if ((this._doc_name != value))
+				if ((this._file_type != value))
 				{
-					this.Ondoc_nameChanging(value);
+					this.Onfile_typeChanging(value);
 					this.SendPropertyChanging();
-					this._doc_name = value;
-					this.SendPropertyChanged("doc_name");
-					this.Ondoc_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_doc_type", DbType="Int")]
-		public System.Nullable<int> doc_type
-		{
-			get
-			{
-				return this._doc_type;
-			}
-			set
-			{
-				if ((this._doc_type != value))
-				{
-					this.Ondoc_typeChanging(value);
-					this.SendPropertyChanging();
-					this._doc_type = value;
-					this.SendPropertyChanged("doc_type");
-					this.Ondoc_typeChanged();
+					this._file_type = value;
+					this.SendPropertyChanged("file_type");
+					this.Onfile_typeChanged();
 				}
 			}
 		}

@@ -22,7 +22,7 @@ namespace BVPS.DB.DBContext
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="htss1")]
 	public partial class ChiMucDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,31 +30,31 @@ namespace BVPS.DB.DBContext
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertdtb_class(dtb_class instance);
-    partial void Updatedtb_class(dtb_class instance);
-    partial void Deletedtb_class(dtb_class instance);
     partial void Insertdtb_url_web_service(dtb_url_web_service instance);
     partial void Updatedtb_url_web_service(dtb_url_web_service instance);
     partial void Deletedtb_url_web_service(dtb_url_web_service instance);
+    partial void Insertdtb_class(dtb_class instance);
+    partial void Updatedtb_class(dtb_class instance);
+    partial void Deletedtb_class(dtb_class instance);
+    partial void Insertdtb_district(dtb_district instance);
+    partial void Updatedtb_district(dtb_district instance);
+    partial void Deletedtb_district(dtb_district instance);
     partial void Insertdtb_profile(dtb_profile instance);
     partial void Updatedtb_profile(dtb_profile instance);
     partial void Deletedtb_profile(dtb_profile instance);
-    partial void Insertdtb_level(dtb_level instance);
-    partial void Updatedtb_level(dtb_level instance);
-    partial void Deletedtb_level(dtb_level instance);
     partial void Insertdtb_nation(dtb_nation instance);
     partial void Updatedtb_nation(dtb_nation instance);
     partial void Deletedtb_nation(dtb_nation instance);
     partial void Insertdtb_province(dtb_province instance);
     partial void Updatedtb_province(dtb_province instance);
     partial void Deletedtb_province(dtb_province instance);
-    partial void Insertdtb_district(dtb_district instance);
-    partial void Updatedtb_district(dtb_district instance);
-    partial void Deletedtb_district(dtb_district instance);
+    partial void Insertdtb_level(dtb_level instance);
+    partial void Updatedtb_level(dtb_level instance);
+    partial void Deletedtb_level(dtb_level instance);
     #endregion
 		
 		public ChiMucDataContext() : 
-				base(global::BVPS.DB.Properties.Settings.Default.htssConnectionString, mappingSource)
+				base(global::BVPS.DB.Properties.Settings.Default.htss1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -83,14 +83,6 @@ namespace BVPS.DB.DBContext
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<dtb_class> dtb_classes
-		{
-			get
-			{
-				return this.GetTable<dtb_class>();
-			}
-		}
-		
 		public System.Data.Linq.Table<dtb_url_web_service> dtb_url_web_services
 		{
 			get
@@ -99,19 +91,27 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
+		public System.Data.Linq.Table<dtb_class> dtb_classes
+		{
+			get
+			{
+				return this.GetTable<dtb_class>();
+			}
+		}
+		
+		public System.Data.Linq.Table<dtb_district> dtb_districts
+		{
+			get
+			{
+				return this.GetTable<dtb_district>();
+			}
+		}
+		
 		public System.Data.Linq.Table<dtb_profile> dtb_profiles
 		{
 			get
 			{
 				return this.GetTable<dtb_profile>();
-			}
-		}
-		
-		public System.Data.Linq.Table<dtb_level> dtb_levels
-		{
-			get
-			{
-				return this.GetTable<dtb_level>();
 			}
 		}
 		
@@ -131,11 +131,97 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		public System.Data.Linq.Table<dtb_district> dtb_districts
+		public System.Data.Linq.Table<dtb_level> dtb_levels
 		{
 			get
 			{
-				return this.GetTable<dtb_district>();
+				return this.GetTable<dtb_level>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_url_web_service")]
+	public partial class dtb_url_web_service : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _url;
+		
+		private int _id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnurlChanging(string value);
+    partial void OnurlChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    #endregion
+		
+		public dtb_url_web_service()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string url
+		{
+			get
+			{
+				return this._url;
+			}
+			set
+			{
+				if ((this._url != value))
+				{
+					this.OnurlChanging(value);
+					this.SendPropertyChanging();
+					this._url = value;
+					this.SendPropertyChanged("url");
+					this.OnurlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -226,49 +312,41 @@ namespace BVPS.DB.DBContext
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_url_web_service")]
-	public partial class dtb_url_web_service : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_district")]
+	public partial class dtb_district : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _url;
-		
 		private int _id;
+		
+		private string _district_code;
+		
+		private string _district_name;
+		
+		private string _province_code;
+		
+		private System.Nullable<int> _type;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnurlChanging(string value);
-    partial void OnurlChanged();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void Ondistrict_codeChanging(string value);
+    partial void Ondistrict_codeChanged();
+    partial void Ondistrict_nameChanging(string value);
+    partial void Ondistrict_nameChanged();
+    partial void Onprovince_codeChanging(string value);
+    partial void Onprovince_codeChanged();
+    partial void OntypeChanging(System.Nullable<int> value);
+    partial void OntypeChanged();
     #endregion
 		
-		public dtb_url_web_service()
+		public dtb_district()
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string url
-		{
-			get
-			{
-				return this._url;
-			}
-			set
-			{
-				if ((this._url != value))
-				{
-					this.OnurlChanging(value);
-					this.SendPropertyChanging();
-					this._url = value;
-					this.SendPropertyChanged("url");
-					this.OnurlChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -287,6 +365,86 @@ namespace BVPS.DB.DBContext
 					this._id = value;
 					this.SendPropertyChanged("id");
 					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_code", DbType="NVarChar(100)")]
+		public string district_code
+		{
+			get
+			{
+				return this._district_code;
+			}
+			set
+			{
+				if ((this._district_code != value))
+				{
+					this.Ondistrict_codeChanging(value);
+					this.SendPropertyChanging();
+					this._district_code = value;
+					this.SendPropertyChanged("district_code");
+					this.Ondistrict_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_name", DbType="NVarChar(100)")]
+		public string district_name
+		{
+			get
+			{
+				return this._district_name;
+			}
+			set
+			{
+				if ((this._district_name != value))
+				{
+					this.Ondistrict_nameChanging(value);
+					this.SendPropertyChanging();
+					this._district_name = value;
+					this.SendPropertyChanged("district_name");
+					this.Ondistrict_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="VarChar(50)")]
+		public string province_code
+		{
+			get
+			{
+				return this._province_code;
+			}
+			set
+			{
+				if ((this._province_code != value))
+				{
+					this.Onprovince_codeChanging(value);
+					this.SendPropertyChanging();
+					this._province_code = value;
+					this.SendPropertyChanged("province_code");
+					this.Onprovince_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="Int")]
+		public System.Nullable<int> type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this.OntypeChanging(value);
+					this.SendPropertyChanging();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
 				}
 			}
 		}
@@ -542,92 +700,6 @@ namespace BVPS.DB.DBContext
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_level")]
-	public partial class dtb_level : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _name;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    #endregion
-		
-		public dtb_level()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(254)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_nation")]
 	public partial class dtb_nation : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -763,7 +835,7 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string province_code
 		{
 			get
@@ -824,21 +896,15 @@ namespace BVPS.DB.DBContext
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_district")]
-	public partial class dtb_district : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.dtb_level")]
+	public partial class dtb_level : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
-		private string _district_code;
-		
-		private string _district_name;
-		
-		private string _province_code;
-		
-		private System.Nullable<int> _type;
+		private string _name;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -846,17 +912,11 @@ namespace BVPS.DB.DBContext
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Ondistrict_codeChanging(string value);
-    partial void Ondistrict_codeChanged();
-    partial void Ondistrict_nameChanging(string value);
-    partial void Ondistrict_nameChanged();
-    partial void Onprovince_codeChanging(string value);
-    partial void Onprovince_codeChanged();
-    partial void OntypeChanging(System.Nullable<int> value);
-    partial void OntypeChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
     #endregion
 		
-		public dtb_district()
+		public dtb_level()
 		{
 			OnCreated();
 		}
@@ -881,82 +941,22 @@ namespace BVPS.DB.DBContext
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_code", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string district_code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(254)")]
+		public string name
 		{
 			get
 			{
-				return this._district_code;
+				return this._name;
 			}
 			set
 			{
-				if ((this._district_code != value))
+				if ((this._name != value))
 				{
-					this.Ondistrict_codeChanging(value);
+					this.OnnameChanging(value);
 					this.SendPropertyChanging();
-					this._district_code = value;
-					this.SendPropertyChanged("district_code");
-					this.Ondistrict_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_district_name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string district_name
-		{
-			get
-			{
-				return this._district_name;
-			}
-			set
-			{
-				if ((this._district_name != value))
-				{
-					this.Ondistrict_nameChanging(value);
-					this.SendPropertyChanging();
-					this._district_name = value;
-					this.SendPropertyChanged("district_name");
-					this.Ondistrict_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province_code", DbType="VarChar(100)")]
-		public string province_code
-		{
-			get
-			{
-				return this._province_code;
-			}
-			set
-			{
-				if ((this._province_code != value))
-				{
-					this.Onprovince_codeChanging(value);
-					this.SendPropertyChanging();
-					this._province_code = value;
-					this.SendPropertyChanged("province_code");
-					this.Onprovince_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="Int")]
-		public System.Nullable<int> type
-		{
-			get
-			{
-				return this._type;
-			}
-			set
-			{
-				if ((this._type != value))
-				{
-					this.OntypeChanging(value);
-					this.SendPropertyChanging();
-					this._type = value;
-					this.SendPropertyChanged("type");
-					this.OntypeChanged();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
