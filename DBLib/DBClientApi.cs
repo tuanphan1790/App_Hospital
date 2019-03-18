@@ -42,7 +42,8 @@ namespace DBLib
 
         public void LoginMailServer()
         {
-            //try
+            #region example
+            /*try
             //{
             //    // Create instance of message
             //    MailMessage message = new MailMessage();
@@ -69,7 +70,8 @@ namespace DBLib
             //catch (Exception e)
             //{
             //    Console.WriteLine("Could not send e-mail. Exception caught: " + e);
-            //}
+            //} */
+            #endregion
 
             //Smtp with gmail
             if (smtpSetting.EnableSSL && smtpSetting.UseGmail)

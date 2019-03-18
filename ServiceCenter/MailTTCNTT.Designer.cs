@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailTTCNTT));
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.chkEnableSecurity = new System.Windows.Forms.CheckBox();
@@ -62,7 +63,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(403, 455);
+            this.btnStop.Location = new System.Drawing.Point(403, 441);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 24;
@@ -72,7 +73,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(313, 455);
+            this.btnStart.Location = new System.Drawing.Point(313, 441);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 23;
@@ -97,7 +98,7 @@
             this.txtIntervalTimer.Name = "txtIntervalTimer";
             this.txtIntervalTimer.Size = new System.Drawing.Size(136, 20);
             this.txtIntervalTimer.TabIndex = 15;
-            this.txtIntervalTimer.Text = "3000";
+            this.txtIntervalTimer.Text = "5000";
             // 
             // label7
             // 
@@ -320,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 490);
+            this.ClientSize = new System.Drawing.Size(804, 474);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -335,8 +336,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMailServerAddress);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MailTTCNTT";
             this.Text = "PHẦN MỀM ĐỒNG BỘ DỮ LIỆU TRUNG TÂM CNTT";
             this.groupBox4.ResumeLayout(false);

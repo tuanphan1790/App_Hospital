@@ -17,6 +17,8 @@ namespace SyncMailClient
         public FormTTHTSS()
         {
             InitializeComponent();
+
+            btnStop.Enabled = false;
         }
 
         Thread processReadMail;
@@ -33,7 +35,7 @@ namespace SyncMailClient
             if (chkEnableSecurity.Checked)
                 smtpSetting.CAPath = txtCAPath.Text;
 
-            dbLibClient = new DBLib.DBClientApi("TT_A", smtpSetting, setting);
+            dbLibClient = new DBLib.DBClientApi("TTHTSS", smtpSetting, setting);
             dbLibClient.LoginMailServer();
 
             dbLibClient.intervalRequest = Convert.ToDouble(txtTimerInterval.Text);
@@ -57,12 +59,21 @@ namespace SyncMailClient
             }
             else
             {
+                btnStart.Enabled = false;
+                btnStop.Enabled = true;
+
                 BeginPushData(settingChooseFile);
             }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
+
+            settingChooseFile = null;
+            btnChooseFile.Enabled = true;
+
             dbLibClient.StopConnectDB();
             processReadMail.Abort();
         }

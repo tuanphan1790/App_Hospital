@@ -16,6 +16,8 @@ namespace ServiceCenter
         public MailTTCNTT()
         {
             InitializeComponent();
+
+            btnStop.Enabled = false;
         }
 
         Thread processReadMail;
@@ -31,12 +33,6 @@ namespace ServiceCenter
             //BeginPushData();
         }
 
-        void MethodReceiveMail(object obj)
-        {
-            DBLib.DBServerApi _dbLib = (DBLib.DBServerApi)obj;
-            _dbLib.StartTimerReadEmail();
-        }
-
         void BeginPullData()
         {
             string connectionString = txtConnString.Text;
@@ -46,13 +42,27 @@ namespace ServiceCenter
             if (chkEnableSecurity.Checked)
                 smtpSetting.CAPath = txtCAPath.Text;
 
-            dbLibServer.LoginPopServerMail();
+            //string message = dbLibServer.LoginPopServerMail();
+            //if(message != "")
+            //{
+            //    MessageBox.Show(message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            btnStart.Enabled = false;
+            btnStop.Enabled = true;
 
             dbLibServer.intervalRequest = Convert.ToDouble(txtIntervalTimer.Text);
             dbLibServer.connectionString = connectionString;
 
             processReadMail = new Thread(MethodReceiveMail);
             processReadMail.Start(dbLibServer);
+        }
+
+        void MethodReceiveMail(object obj)
+        {
+            DBLib.DBServerApi _dbLib = (DBLib.DBServerApi)obj;
+            _dbLib.StartTimerReadEmail();
         }
 
         void BeginPushData()
@@ -93,6 +103,9 @@ namespace ServiceCenter
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
+
             dbLibServer.StopTimerReadMail();
             processReadMail.Abort();
         }

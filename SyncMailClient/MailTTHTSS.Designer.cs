@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTTHTSS));
             this.label1 = new System.Windows.Forms.Label();
             this.txtMailServerAddress = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -56,7 +57,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkEnableGetDataServer = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaTT = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSMTPServerPort = new System.Windows.Forms.TextBox();
@@ -247,7 +248,7 @@
             // 
             // btnChooseFile
             // 
-            this.btnChooseFile.Location = new System.Drawing.Point(443, 23);
+            this.btnChooseFile.Location = new System.Drawing.Point(423, 22);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(150, 23);
             this.btnChooseFile.TabIndex = 39;
@@ -330,7 +331,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.txtMaTT);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.chkEnableGetDataServer);
             this.groupBox5.Location = new System.Drawing.Point(12, 74);
@@ -340,12 +341,12 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cấu hình việc lấy dữ liệu ở trung tâm CNTT về trước khi đồng bộ lên";
             // 
-            // textBox1
+            // txtMaTT
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 40;
+            this.txtMaTT.Location = new System.Drawing.Point(112, 48);
+            this.txtMaTT.Name = "txtMaTT";
+            this.txtMaTT.Size = new System.Drawing.Size(147, 20);
+            this.txtMaTT.TabIndex = 40;
             // 
             // label11
             // 
@@ -393,8 +394,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMailServerAddress);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormTTHTSS";
             this.Text = "PHẦN MỀM ĐỒNG BỘ DỮ LIỆU TRUNG TÂM HTSS";
             this.Load += new System.EventHandler(this.FormTTHTSS_Load);
@@ -441,7 +442,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkEnableGetDataServer;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaTT;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnChooseFile;
         private System.Windows.Forms.Label label2;

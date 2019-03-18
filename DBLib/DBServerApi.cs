@@ -36,29 +36,38 @@ namespace DBLib
 
         bool checkPopClientConnected = false;
         bool enableSSL;
-        public void LoginPopServerMail()
+        public string LoginPopServerMail()
         {
-            if (!checkPopClientConnected)
+            try
             {
-                this.enableSSL = smtpSetting.EnableSSL;
-                if (!enableSSL)
-                    popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL); //For no SSL     
-                else
+                if (!checkPopClientConnected)
                 {
-                    if (smtpSetting.UseGmail)
-                    {
-                        // Doi voi Gmail mail ()
-                        popClient.Connect("pop.gmail.com", 995, true);
-                    }
+                    this.enableSSL = smtpSetting.EnableSSL;
+                    if (!enableSSL)
+                        popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL); //For no SSL     
                     else
                     {
-                        // Doi voi Mercury mail ()
-                        popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL, 3000, 3000, new RemoteCertificateValidationCallback(ValidateServerCertificate)); //For SSL 
+                        if (smtpSetting.UseGmail)
+                        {
+                            // Doi voi Gmail mail ()
+                            popClient.Connect("pop.gmail.com", 995, true);
+                        }
+                        else
+                        {
+                            // Doi voi Mercury mail ()
+                            popClient.Connect(smtpSetting.SmtpServer, smtpSetting.SmtpPort, enableSSL, 3000, 3000, new RemoteCertificateValidationCallback(ValidateServerCertificate)); //For SSL 
+                        }
                     }
+
+                    popClient.Authenticate(smtpSetting.UserAddress, smtpSetting.Password, AuthenticationMethod.UsernameAndPassword);
+                    checkPopClientConnected = true;
                 }
 
-                popClient.Authenticate(smtpSetting.UserAddress, smtpSetting.Password, AuthenticationMethod.UsernameAndPassword);
-                checkPopClientConnected = true;
+                return "";
+            }
+            catch(Exception ex)
+            {
+                return "Không kết nối được tới mail server";
             }
         }
 
@@ -88,7 +97,7 @@ namespace DBLib
 
         public void StopTimerReadMail()
         {
-            DeleteAllMail();
+            //DeleteAllMail();
             TimerReadMail.Stop();
         }
 
@@ -96,8 +105,9 @@ namespace DBLib
         {
             TimerReadMail.Stop();
 
-            ReadMailFromPopServer();
             LoginPopServerMail();
+
+            ReadMailFromPopServer();
 
             TimerReadMail.Start();
         }
